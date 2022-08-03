@@ -101,10 +101,10 @@
     font-size: 22rpx;
     line-height: 32rpx;
 }
-.xzhy-container .tab-bar .ul .li .has, .ready{
+.xzhy-container .tab-bar .ul .li .has{
     color: #64338E;
 }
-.xzhy-container .tab-bar .ul .li .none, .full{
+.xzhy-container .tab-bar .ul .li .none{
     color: #888;
 }
 .xzhy-container .tab-bar .ul .li.active{
@@ -141,69 +141,98 @@
     width: 24rpx;
     height: 24rpx;
 }
-
-.xzhy-container .tab-con{
-    view{
-        margin-top: 16rpx;
-        background: #fff;
-        h5{
-            height: 80rpx;
-            padding-left: 30rpx;
-            font-size: 32rpx;
-            color: #000;
-            line-height: 80rpx;
-        }
-        ul{
-            li{
-                display: flex;
-                justify-content: space-between;
-                padding: 0 30rpx;
-                padding-top: 36rpx;
-                padding-bottom: 32rpx;
-                border-top: 1rpx solid #F8F8F8;
-        
-                .l{
-                    h6{
-                        margin-bottom: 18rpx;
-                        font-size: 28rpx;
-                        color: #333;
-                        line-height: 40rpx;
-                    }
-                    p{
-                        width: 400rpx;
-                        font-size: 24rpx;
-                        color: #888;
-                        line-height: 34rpx;
-                        -webkit-line-clamp: 2;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                    }
-                }
-                .r{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    p{
-                        margin-right: 30rpx;
-                        font-size: 26rpx;
-                        color: #DB8C11;
-                        line-height: 36rpx;
-                    }
-                    button{
-                        width: 104rpx;
-                        height: 48rpx;
-                        text-align: center;
-                        font-size: 20rpx;
-                        color: #fff;
-                        line-height: 48rpx;
-                        border-radius: 24rpx;
-                        background: #7C509D;
-                    }
-                }
-            }
-        }
-    }
+.xzhy-container .tab-con .div{
+    margin-top: 16rpx;
+    background: #fff;
 }
-	
+.xzhy-container .tab-con .div .h5{
+    height: 80rpx;
+    padding-left: 30rpx;
+    font-size: 32rpx;
+    color: #000;
+    line-height: 80rpx;
+}
+.xzhy-container .tab-con .div .ul .li{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    padding-top: 36rpx;
+    padding-bottom: 32rpx;
+    border-top: 1rpx solid #F8F8F8;
+}
+.xzhy-container .tab-con .div .ul .li .l .h6{
+    margin-bottom: 18rpx;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+}
+.xzhy-container .tab-con .div .ul .li .l .p{
+    width: 400rpx;
+    font-size: 24rpx;
+    color: #888;
+    line-height: 34rpx;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.xzhy-container .tab-con .div .ul .li .r{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.xzhy-container .tab-con .div .ul .li .r .p{
+    margin-right: 30rpx;
+    font-size: 26rpx;
+    color: #DB8C11;
+    line-height: 36rpx;
+}
+.xzhy-container .tab-con .div .ul .li .r button{
+    width: 104rpx;
+    height: 48rpx;
+    text-align: center;
+    font-size: 20rpx;
+    color: #fff;
+    line-height: 48rpx;
+    border-radius: 24rpx;
+    background: #7C509D;
+}
+.xzhy-container .tab-con .div .ul .li .r button.full{
+    background: rgba(172,170,173,1);
+}
+
+.xzhy-container .tab-con.ready{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16rpx;
+    height: 250rpx;
+    background: #fff;
+}
+
+.xzhy-container .tab-con.ready .p{
+    font-size: 28rpx;
+    color: #999;
+    line-height: 40rpx;
+}
+.xzhy-container .tab-con.ready .span{
+    font-size: 32rpx;
+    color: #64338E;
+    line-height: 44rpx;
+}
+.xzhy-container .tab-con.none{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16rpx;
+    height: 250rpx;
+    background: #fff;
+}
+.xzhy-container .tab-con.ready .p{
+    font-size: 28rpx;
+    color: #999;
+    line-height: 40rpx;
+}

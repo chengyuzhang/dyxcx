@@ -37,7 +37,7 @@
         </view>
     </view>
     <view class="tab-con has" tt:if="{{tabStatus == 1}}">
-        <view class="morning">
+        <view class="morning div">
             <view class="h5">上午号源</view>
             <view class="ul">
                 <view class="li" tt:for="{{3}}">
@@ -47,12 +47,13 @@
                     </view>
                     <view class="r">
                         <view class="p">￥50</view>
-                        <button bindtap="timeShowFn">剩余20</button>
+                        <button class="full" tt:if="true">约满</button>
+                        <button tt:else bindtap="timeShowFn">剩余20</button>
                     </view>
                 </view>
             </view>
         </view>
-        <view class="afternoon">
+        <view class="afternoon div">
             <view class="h5">下午号源</view>
             <view class="ul">
                 <view class="li" tt:for="{{3}}">
@@ -67,5 +68,44 @@
                 </view>
             </view>
         </view>
+    </view>
+    <view class="tab-con none" tt:if="{{tabStatus == 2}}">
+        <text>当天无号源</text>
+    </view>
+    <view class="tab-con full" tt:if="{{tabStatus == 3}}">
+        <view class="morning div">
+            <view class="h5">上午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{3}}">
+                    <view class="l">
+                        <view class="h6">儿科专家（正高）</view>
+                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥50</view>
+                        <button bindtap="timeShowFn">剩余20</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="afternoon div">
+            <view class="h5">下午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{3}}">
+                    <view class="l">
+                        <view class="h6">儿科专家（正高）</view>
+                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥50</view>
+                        <button bindtap="timeShowFn">剩余20</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tab-con ready" tt:if="{{tabStatus == 4}}">
+        <text class="p">距离7月10日放号还有</text>
+        <text class="span">23时21分20秒</text>
     </view>
 </view>
