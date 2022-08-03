@@ -1,0 +1,73 @@
+<view class="index-container">
+    <view class="ul top">
+        <view class="li" bindtap="orderRegister">
+            <view class="l">
+                <image src="../../assets/imgs/yygh.png"></image>
+            </view>
+            <view class="r">
+                <text class="h6">预约挂号</text>
+                <text class="p">今日挂号/预约挂号</text>
+            </view>
+        </view>
+        <view class="li" bindtap="toJcjgPage">
+            <view class="l">
+                <image src="../../assets/imgs/jcjg.png"></image>
+            </view>
+            <view class="r">
+                <text class="h6">检查结果</text>
+                <text class="p">查询结果问医生</text>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="ul items">
+        <view class="li" tt:for="{{items}}" data-idx="{{index}}" bindtap="toPage">
+            <view class="img">
+				<image tt:if="{{index == 0}}" src="../../assets/imgs/hsjc.png"></image>
+				<image tt:if="{{index == 1}}" src="../../assets/imgs/zjjs.png"></image>
+				<image tt:if="{{index == 2}}" src="../../assets/imgs/tjyy.png"></image>
+				<image tt:if="{{index == 3}}" src="../../assets/imgs/jzxz.png"></image>
+				<image tt:if="{{index == 4}}" src="../../assets/imgs/yfxx.png"></image>
+				<image tt:if="{{index == 5}}" src="../../assets/imgs/yyjj.png"></image>
+				<image tt:if="{{index == 6}}" src="../../assets/imgs/yydt.png"></image>
+				<image tt:if="{{index == 7}}" src="../../assets/imgs/yqwz.png"></image>
+            </view>
+            <text class="p">{{item.title}}</text>
+        </view>
+    </view>
+    <view class="banner">
+        <swiper indicator-dots circular>
+            <swiper-item>
+                <image src="../../assets/imgs/example.png"></image>
+            </swiper-item>
+            <swiper-item>
+                <image src="../../assets/imgs/example.png"></image>
+            </swiper-item>
+            <swiper-item>
+                <image src="../../assets/imgs/example.png"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="infos">
+        <view class="bar">
+            <view class="ul">
+                <view class="li {{tabIndex == 0 ? 'active' : '' }}" data-idx=0 bindtap="changeTab">
+                    <text class="p">医院动态</text>
+                    <text class="span"></text>
+                </view>
+                <view class="li {{tabIndex == 1 ? 'active' : '' }}" data-idx=1 bindtap="changeTab">
+                    <text class="p">孕妇学院</text>
+                    <text class="span"></text>
+                </view>
+            </view>
+            <view class="more" bindtap="toMore">更多</view>
+        </view>
+        <view class="items" tt:if="{{tabIndex == 0}}">
+            <Item tt:for="{{4}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx";></Item>
+        </view>
+        <view class="items" tt:if="{{tabIndex == 1}}">
+            <Item tt:for="{{5}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx";></Item>
+        </view>
+    </view>
+    <nav-bar idx=0></nav-bar>
+</view>

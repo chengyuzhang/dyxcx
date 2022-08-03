@@ -1,0 +1,36 @@
+.item-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+}
+.item-container .l{
+    margin-right: 40rpx;
+}
+.item-container .l .h5{
+    margin-bottom: 16rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #000;
+    line-height: 44rpx;
+}
+.item-container .l .p{
+
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #888;
+    line-height: 36rpx;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.item-container .r{
+    width: 180rpx;
+    height: 130rpx;
+}
+.item-container .r image{
+    width: 180rpx;
+    height: 130rpx;
+    border-radius: 6rpx;
+}

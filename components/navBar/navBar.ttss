@@ -1,0 +1,38 @@
+.nav-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 96rpx;
+    background: #fff;
+}
+
+.nav-container .ul{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 140rpx;
+}
+.nav-container .ul .li{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.nav-container .ul .li image{
+    width: 48rpx;
+    height: 48rpx;
+}
+.nav-container .ul .li text{
+    margin-top: 6rpx;
+    font-size: 20rpx;
+    color: rgba(0,0,0,.5);
+    font-weight: 500;
+    line-height: 28rpx;
+}
+.nav-container .ul .li.active text{
+    color: rgba(0,0,0,1);
+}

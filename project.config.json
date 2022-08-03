@@ -1,0 +1,12 @@
+{
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "autoCompile": true
+    },
+    "appid": "tt720d04b0ed3364cb01",
+    "projectname": "dcfy"
+}

@@ -1,0 +1,66 @@
+/**app.wxss**/
+
+page {
+    width: 100%;
+    font-family: PingFangSC;
+    -webkit-overflow-scrolling: touch;
+  background-color: #f2f2f2;
+  }
+  
+  view {
+    box-sizing: border-box;
+    font: inherit;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  scroll-view {
+    box-sizing: border-box;
+    font: inherit;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  image {
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  text {
+    box-sizing: border-box;
+    line-height: 1;
+    font: inherit;
+    color: inherit;
+  }
+  
+  icon {
+    width: auto;
+    height: auto;
+    line-height: 1;
+  }
+  
+  button {
+    margin: 0;
+    padding: 0 !important;
+    line-height: 1;
+    font-weight: normal;
+    color: inherit;
+    background: none;
+    border-radius: 0;
+  }
+  button::after {
+    border: none;
+  }
+  
+  textarea {
+    box-sizing: border-box;
+  }
+  input {
+    min-height: auto;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    color: transparent;
+  }
