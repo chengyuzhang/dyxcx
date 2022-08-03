@@ -1,0 +1,24 @@
+<view class="xzks-container">
+    <image src="../../assets/imgs/example.png"></image>
+    <view class="introduce">
+        <view class="l">
+            <view class="h5">东城妇幼保健院(南区)</view>
+            <view class="p">北京市东城区法华南里25号楼</view>
+            <view>
+                <text class="span">7:30</text>
+                <text class="i">放第15天号</text>
+            </view>
+        </view>
+        <view class="r">
+            <image src="../../assets/imgs/select-bg.png"></image>
+        </view>
+    </view>
+    <view class="side-tab">
+        <view class="ol" style="height:{{iH}}px;">
+            <view class="li {{tabIndex == index ? 'active': ''}}" tt:for={{sideTabs}} data-idx="{{index}}" bindtap="changeTab">{{item.title}}</view>
+        </view>
+        <view class="ul" style="height:{{iH}}px;">
+            <view class="li" tt:for={{sideTabs}} bindtap="toPage">{{item.title}}</view>
+        </view>
+    </view>
+</view>

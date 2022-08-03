@@ -1,0 +1,39 @@
+<view class="xzhy-container">
+    <view class="top">
+        <view class="h5">
+            <text class="i">儿内科</text>
+            <view class="p">
+                <text>科室介绍</text>
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="ul">
+            <view class="li">
+                <image src="../../assets/imgs/ly.png"></image>
+                <text class="p">东城妇幼保健院(南区)</text>
+            </view>
+            <view class="li" style="margin-right:0;">
+                <image src="../../assets/imgs/gps.png"></image>
+                <text class="p">北京市东城区法华南里25号楼备份</text>
+            </view>
+        </view>
+    </view>
+    <view class="tab-bar">
+        <view class="ul">
+            <view class="li {{tabIndex == index ? 'active' : ''}}" tt:for={{dateList}} data-idx="{{index}}" bindtap="changeTab">
+                <view class="p p1">{{item.title}}</view>
+                <view class="p p2">{{item.str}}</view>
+                <view class="has p3" tt:if="{{item.status == 1}}">有号</view>
+                <view class="none p3" tt:if="{{item.status == 2}}">无号</view>
+                <view class="full p3" tt:if="{{item.status == 3}}">约满</view>
+                <view class="ready p3" tt:if="{{item.status == 4}}">即将放号</view>
+            </view>
+        </view>
+        <view class="r" bindtap="showCalendarFn">
+            <view class="con">
+                <view class="p">全部日期</view>
+                <image src="../../assets/imgs/arrow-down2.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

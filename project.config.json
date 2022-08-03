@@ -1,12 +1,37 @@
 {
-    "setting": {
-        "urlCheck": true,
-        "es6": true,
-        "postcss": true,
-        "minified": true,
-        "newFeature": true,
-        "autoCompile": true
-    },
-    "appid": "tt720d04b0ed3364cb01",
-    "projectname": "dcfy"
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "autoCompile": true
+  },
+  "appid": "tt720d04b0ed3364cb01",
+  "projectname": "dcfy",
+  "condition": {
+    "miniprogram": {
+      "current": 1659516340754,
+      "list": [
+        {
+          "id": 1659511353198,
+          "name": "选择科室",
+          "pathName": "pages/xzks/xzks",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659516340754,
+          "name": "选择号源",
+          "pathName": "pages/xzhy/xzhy",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        }
+      ]
+    }
+  }
 }

@@ -1,12 +1,14 @@
 {
-  "pages":[
-    "pages/index/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Mini Program",
-    "navigationBarTextStyle":"black"
-  },
-  "component2": true
+    "pages": [
+        "pages/index/index",
+        "pages/xzks/xzks",
+        "pages/xzhy/xzhy"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Mini Program",
+        "navigationBarTextStyle": "black"
+    },
+    "component2": true
 }

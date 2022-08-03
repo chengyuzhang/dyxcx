@@ -63,11 +63,34 @@
             <view class="more" bindtap="toMore">更多</view>
         </view>
         <view class="items" tt:if="{{tabIndex == 0}}">
-            <Item tt:for="{{4}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx";></Item>
+            <Item tt:for="{{4}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
         </view>
         <view class="items" tt:if="{{tabIndex == 1}}">
-            <Item tt:for="{{5}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx";></Item>
+            <Item tt:for="{{5}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
         </view>
     </view>
+    <view class="select-zone" tt:if="{{showSelectZone}}">
+        <view class="con">
+            <view class="h5">选择院区</view>
+            <view class="ul">
+                <view class="li">
+                    <view class="l" data-idx=0 bindtap="selectZone">
+                        <view class="h6">东城妇幼保健院(南区)</view>
+                        <view class="p">北京市东城区法华南里25号楼</view>
+                    </view>
+                    <image src="../../assets/imgs/r.png"></image>
+                </view>
+                <view class="li" data-idx=1 bindtap="selectZone">
+                    <view class="l">
+                        <view class="h6">东城妇幼保健院(北区)</view>
+                        <view class="p">北京市东城区交道口南大街136号</view>
+                    </view>
+                    <image src="../../assets/imgs/r.png"></image>
+                </view>
+            </view>
+            <button bindtap="showSelectZoneFn">取消</button>
+        </view>
+    </view>
+
     <nav-bar idx=0></nav-bar>
 </view>
