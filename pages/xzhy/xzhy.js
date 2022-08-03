@@ -1,6 +1,7 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/xzhy/xzhy.js
 Page({
   data: {
+    tabStatus: 1,
     dateList: [
       {
         title: '周五',
@@ -109,5 +110,13 @@ Page({
   },
   onLoad: function (options) {
 
+  },
+
+  changeTab(ev){
+    let idx = ev.currentTarget.dataset.idx
+    this.setData({
+      tabIndex: idx,
+      tabStatus: this.data.dateList[idx].status
+    })
   }
 })

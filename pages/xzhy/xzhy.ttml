@@ -36,4 +36,36 @@
             </view>
         </view>
     </view>
+    <view class="tab-con has" tt:if="{{tabStatus == 1}}">
+        <view class="morning">
+            <view class="h5">上午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{3}}">
+                    <view class="l">
+                        <view class="h6">儿科专家（正高）</view>
+                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥50</view>
+                        <button bindtap="timeShowFn">剩余20</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="afternoon">
+            <view class="h5">下午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{3}}">
+                    <view class="l">
+                        <view class="h6">儿科专家（正高）</view>
+                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥50</view>
+                        <button bindtap="timeShowFn">剩余20</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>
