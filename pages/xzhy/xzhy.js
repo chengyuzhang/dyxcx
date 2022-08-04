@@ -137,5 +137,10 @@ Page({
         timeShow: !this.data.timeShow
       }
     )
+  },
+  toPage(){
+    tt.navigateTo({
+      url: '/pages/ksjs/ksjs'
+    });
   }
 })

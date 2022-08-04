@@ -2,7 +2,7 @@
     <view class="top">
         <view class="h5">
             <text class="i">儿内科</text>
-            <view class="p">
+            <view class="p" bindtap="toPage">
                 <text>科室介绍</text>
                 <image src="../../assets/imgs/r.png"></image>
             </view>

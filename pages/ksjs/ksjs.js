@@ -5,5 +5,10 @@ Page({
   },
   onLoad: function (options) {
 
+  },
+  toPage(){
+    tt.navigateTo({
+      url: '/pages/xzhy/xzhy'
+    });
   }
 })
