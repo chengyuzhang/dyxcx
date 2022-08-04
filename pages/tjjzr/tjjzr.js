@@ -16,7 +16,6 @@ Page({
     ybkhVal: '',
     sjhVal: '',
     yzmVal: '',
-    numStr: 10,
     cardTypeList: ['身份证'],
     relationList: ['本人','配偶','子女','父亲','母亲','其他亲属',],
     showRelation: false,
@@ -78,6 +77,7 @@ Page({
       "珞巴族",
       "基诺族"
     ],
+    numStr: 10,
     iBtn: true
   },
   onLoad: function (options) {
@@ -105,5 +105,41 @@ Page({
     this.setData({
       srVal: ev.detail.value
     })
+  },
+  changeSex(ev){
+    let idx = ev.currentTarget.dataset.sex
+    this.setData({
+      sexIndex: idx
+    })
+  },
+  changeType(ev){
+    let idx = ev.currentTarget.dataset.type
+    this.setData({
+      typeIndex: idx
+    })
+  },
+  getCode(){
+    if(!this.data.iBtn) return
+    this.setData({
+      iBtn: false
+    })
+    const count = this.data.numStr
+    let num = this.data.numStr
+    let timer = null
+    timer = setInterval(() => {
+      num--
+      
+      this.setData({
+          numStr: num
+      })
+
+      if(num < 0){
+        this.setData({
+        iBtn: true,
+        numStr: count
+      })
+        clearInterval(timer)
+      }
+    }, 1000)
   }
 })

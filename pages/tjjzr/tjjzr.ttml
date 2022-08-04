@@ -80,12 +80,12 @@
         <view class="li">
             <text class="span">费别</text>
             <view class="ol r">
-                <view class="li" data-sex=0 bindtap="changeType">
+                <view class="li" data-type=0 bindtap="changeType">
                     <image tt:if="{{typeIndex == 0}}" src="../../assets/imgs/dot.png"></image>
                     <image tt:else src="../../assets/imgs/space.png"></image>
                     <text class="span">自费</text>
                 </view>
-                <view class="li" data-sex=1 bindtap="changeType">
+                <view class="li" data-type=1 bindtap="changeType">
                     <image tt:if="{{typeIndex == 1}}" src="../../assets/imgs/dot.png"></image>
                     <image tt:else src="../../assets/imgs/space.png"></image>
                     <text class="span">医保</text>

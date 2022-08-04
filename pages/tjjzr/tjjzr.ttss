@@ -5,7 +5,7 @@
     overflow-y: auto;
     background: #F8F8F8;
 }
-.tjjzr-container .ul .li{
+.tjjzr-container .ul >.li{
     position: relative;
     z-index: 1;
     display: flex;
