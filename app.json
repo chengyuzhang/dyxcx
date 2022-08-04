@@ -4,7 +4,8 @@
         "pages/xzks/xzks",
         "pages/xzhy/xzhy",
         "pages/ghqr/ghqr",
-        "pages/tjjzr/tjjzr"
+        "pages/tjjzr/tjjzr",
+        "pages/ksjs/ksjs"
     ],
     "window": {
         "backgroundTextStyle": "light",
