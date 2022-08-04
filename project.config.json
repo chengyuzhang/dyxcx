@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": 1659598517185,
+      "current": 1659620463188,
       "list": [
         {
           "id": 1659511353198,
@@ -53,6 +53,33 @@
           "id": 1659598517185,
           "name": "科室介绍",
           "pathName": "pages/ksjs/ksjs",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659613398741,
+          "name": "科室医生",
+          "pathName": "pages/ksys/ksys",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659614131964,
+          "name": "医生介绍详情",
+          "pathName": "pages/ysjsxq/ysjsxq",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659620463188,
+          "name": "检查结果",
+          "pathName": "pages/jcjg/jcjg",
           "query": "",
           "scene": "990001",
           "launchFrom": "scan",

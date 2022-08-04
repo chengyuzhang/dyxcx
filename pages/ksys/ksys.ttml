@@ -1,0 +1,15 @@
+<view class="ksys-container">
+    <view class="ul">
+        <view class="li" tt:for="{{10}}" data-idx="{{index}}" bindtap="toPage">
+            <image src="../../assets/imgs/people.png"></image>
+            <view class="r">
+                <view class="h5">
+                    <text class="span">张晓红</text>
+                    <text class="i">主任医师</text>
+                </view>
+                <text class="h6">东城区妇幼保健院 儿内科</text>
+                <text class="p">擅长：新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗</text>
+            </view>
+        </view>
+    </view>
+</view>

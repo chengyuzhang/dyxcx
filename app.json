@@ -5,7 +5,10 @@
         "pages/xzhy/xzhy",
         "pages/ghqr/ghqr",
         "pages/tjjzr/tjjzr",
-        "pages/ksjs/ksjs"
+        "pages/ksjs/ksjs",
+        "pages/ksys/ksys",
+        "pages/ysjsxq/ysjsxq",
+        "pages/jcjg/jcjg"
     ],
     "window": {
         "backgroundTextStyle": "light",
