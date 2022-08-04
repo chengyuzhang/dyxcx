@@ -1,0 +1,120 @@
+<view class="tjjzr-container">
+    <view class="ul">
+        <view class="li gx">
+            <picker
+                bindchange="pickerRelation"
+                header-text="选择与本人关系"
+                value="{{ relationIndex }}"
+                range="{{ relationList }}"></picker>
+            <text class="span">关系</text>
+            <view class="r">
+                <input value="{{gxVal}}" disabled placeholder="请选择与本人关系" />
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="li">
+            <text class="span">姓名</text>
+            <view class="r">
+                <input value="{{xmVal}}" placeholder="请输入就诊人真实姓名" />
+            </view>
+        </view>
+        <view class="li">
+            <picker
+                bindchange="pickerCardType"
+                header-text="选择证件类型"
+                value="{{ cardIndex }}"
+                range="{{ cardTypeList }}"></picker>
+            <text class="span">证件类型</text>
+            <view class="r">
+                <input value="{{zjlxVal}}" disabled placeholder="请选证件类型" />
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="li">
+            <text class="span">证件号码</text>
+            <view class="r">
+                <input value="{{zjhmVal}}" placeholder="请输入证件号码" />
+            </view>
+        </view>
+        <view class="li">
+            <text class="span">性别</text>
+            <view class="ol r">
+                <view class="li" data-sex=0 bindtap="changeSex">
+                    <image tt:if="{{sexIndex == 0}}" src="../../assets/imgs/dot.png"></image>
+                    <image tt:else src="../../assets/imgs/space.png"></image>
+                    <text class="span">男</text>
+                </view>
+                <view class="li" data-sex=1 bindtap="changeSex">
+                    <image tt:if="{{sexIndex == 1}}" src="../../assets/imgs/dot.png"></image>
+                    <image tt:else src="../../assets/imgs/space.png"></image>
+                    <text class="span">女</text>
+                </view>
+            </view>
+        </view>
+        <view class="li" bindtap="showNationFn">
+            <picker
+                bindchange="pickerNation"
+                header-text="请选择民族"
+                value="{{ nationIndex }}"
+                range="{{ nationList }}"></picker>
+            <text class="span">民族</text>
+            <view class="r">
+                <input value="{{mzVal}}" disabled placeholder="请选民族" />
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="li">
+            <picker
+                mode="date"
+                header-text="选择生日"
+                bindchange="datePickerChange"
+                value="{{ srVal }}"
+                start="1980-09-01"
+                end="2022-09-01"></picker>
+            <text class="span">生日</text>
+            <view class="r">
+                <input value="{{srVal}}" disabled placeholder="请选择就诊人生日" />
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="li">
+            <text class="span">费别</text>
+            <view class="ol r">
+                <view class="li" data-sex=0 bindtap="changeType">
+                    <image tt:if="{{typeIndex == 0}}" src="../../assets/imgs/dot.png"></image>
+                    <image tt:else src="../../assets/imgs/space.png"></image>
+                    <text class="span">自费</text>
+                </view>
+                <view class="li" data-sex=1 bindtap="changeType">
+                    <image tt:if="{{typeIndex == 1}}" src="../../assets/imgs/dot.png"></image>
+                    <image tt:else src="../../assets/imgs/space.png"></image>
+                    <text class="span">医保</text>
+                </view>
+            </view>
+        </view>
+        <view class="li">
+            <text class="span">医保卡号</text>
+            <view class="r">
+                <input value="{{ybkhVal}}" placeholder="请输入医保卡号" />
+                <image src="../../assets/imgs/scan.png"></image>
+            </view>
+        </view>
+        <view class="li">
+            <text class="span">手机号</text>
+            <view class="r">
+                <input value="{{sjhVal}}" placeholder="请输入就诊人手机号码" />
+            </view>
+        </view>
+        <view class="li code">
+            <text class="span">验证码</text>
+            <view class="r">
+                <input value="{{yzmVal}}" placeholder="请输入验证码" />
+                <text class="i" tt:if="{{!iBtn}}">{{numStr}}s</text>
+                <button tt:if="{{iBtn}}" bindtap="getCode">获取验证码</button>
+            </view>
+        </view>
+    </view>
+    <view class="btn">
+        <button>提交就诊人信息</button>
+    </view>
+</view>

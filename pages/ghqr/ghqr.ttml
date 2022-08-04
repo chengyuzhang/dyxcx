@@ -1,0 +1,38 @@
+<view class="ghqr-container">
+    <view class="con">
+        <view class="h6">挂号信息</view>
+        <view class="ul">
+            <view class="li" tt:for="{{5}}">
+                <text class="span">挂号信息</text>
+                <text class="p">2022-10-10 周一</text>
+            </view>
+        </view>
+        <view class="h6" style="margin-top:48rpx;">就诊人信息</view>
+        <view class="add">
+            <view class="img" tt:if="{{false}}" bindtap="toAddPage">
+                <image src="../../assets/imgs/add-bg.png"></image>
+            </view>
+            <view class="con" tt:if="{{true}}" bindtap="toAddPage">
+                <view class="l">星星</view>
+                <view class="m">
+                    <view class="p">1578 944 9888</view>
+                    <view class="p">
+                        <text class="i">北京社保卡</text>
+                        <text class="span">医保报销</text>
+                    </view>
+                </view>
+                <view class="b">
+                    <text class="i">更换</text>
+                    <image src="../../assets/imgs/r.png"></image>
+                </view>
+            </view>
+            <view class="p">
+                <text class="i">请仔细阅读</text>
+                <text class="span" bindtap="toPage">《挂号须知》</text>
+            </view>
+        </view>
+    </view>
+    <view class="btn">
+        <button bindtap="toSuccessPage">确认</button>
+    </view>
+</view>

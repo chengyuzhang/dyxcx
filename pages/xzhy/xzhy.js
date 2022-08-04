@@ -1,6 +1,8 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/xzhy/xzhy.js
 Page({
   data: {
+    timeShow: false,
+    timeIndex: 0,
     tabStatus: 1,
     dateList: [
       {
@@ -118,5 +120,22 @@ Page({
       tabIndex: idx,
       tabStatus: this.data.dateList[idx].status
     })
+  },
+  getTimeZone(ev){
+    let idx = ev.currentTarget.dataset.idx
+    console.log(idx)
+    this.setData({
+      timeIndex: idx
+    })
+    tt.navigateTo({
+      url: `/pages/ghqr/ghqr`
+    })
+  },
+  timeShowFn(){
+    this.setData(
+      {
+        timeShow: !this.data.timeShow
+      }
+    )
   }
 })

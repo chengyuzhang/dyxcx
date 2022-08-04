@@ -1,0 +1,111 @@
+.tjjzr-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #F8F8F8;
+}
+.tjjzr-container .ul .li{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+    padding: 0 30rpx;
+    border-bottom: 1px solid #F8F8F8;
+    background: #fff;
+}
+.tjjzr-container .ul .li picker{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+.tjjzr-container .ul .li .span{
+    font-size: 32rpx;
+    color: #333;
+    line-height: 44rpx;
+}
+.tjjzr-container .ul .li .r{
+    display: flex;
+    align-items: center;
+}
+.tjjzr-container .ul .li .r input{
+    width: 400rpx;
+    text-align: right;
+    font-size: 28rpx;
+    color: #8B8B8B;
+    line-height: 40rpx;
+}
+.tjjzr-container .ul .li .r image{
+    margin-left: 6rpx;
+    width: 24rpx;
+    height: 24rpx;
+}
+.tjjzr-container .ul .li .r button{
+    margin-left: 44rpx;
+    width: 144rpx;
+    height: 52rpx;
+    line-height: 52rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #437DD2;
+    border: 1rpx solid #437DD2;
+    border-radius: 8rpx;
+}
+.tjjzr-container .ul .li .r .i{
+    margin-left: 30rpx;
+    padding-left: 30rpx;
+    font-size: 28rpx;
+    color: #8B8B8B;
+    line-height: 40rpx;
+    border-left: 1rpx solid #EAEAEA;
+}
+.tjjzr-container .ul .li .ol.r{
+    display: flex;
+}
+.tjjzr-container .ul .li .ol.r .li{
+    display: flex;
+    align-items: center;
+    margin-left: 16rpx;
+}
+.tjjzr-container .ul .li .ol.r .li image{
+    margin-right: 14rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+.tjjzr-container .ul .li .ol.r .li .span{
+    font-size: 32rpx;
+    color: #444;
+    line-height: 44rpx;
+}
+.tjjzr-container .ul .li.gx{
+    margin-bottom: 16rpx;
+}
+.tjjzr-container .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+    width: 100%;
+    height: 116rpx;
+    line-height: 116rpx;
+    text-align: center;
+    overflow: hidden;
+}
+.tjjzr-container .btn button{
+    width: 550rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: #7C509D;
+    border-radius: 40rpx;
+}
+.tjjzr-container .ul .li.code .r input{
+    width: 200rpx;
+}

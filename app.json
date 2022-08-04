@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/xzks/xzks",
-        "pages/xzhy/xzhy"
+        "pages/xzhy/xzhy",
+        "pages/ghqr/ghqr",
+        "pages/tjjzr/tjjzr"
     ],
     "window": {
         "backgroundTextStyle": "light",

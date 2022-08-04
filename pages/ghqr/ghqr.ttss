@@ -1,0 +1,135 @@
+.ghqr-container{
+    width: 100%;
+    height: 100%;
+    padding-top: 30rpx;
+    background: #F8F8F8;
+}
+.ghqr-container >.con{
+    margin: 0 auto;
+    width: 690rpx;
+    padding: 30rpx;
+    padding-top: 18rpx;
+    background: #fff;
+}
+.ghqr-container >.con .h6{
+    margin-bottom: 28rpx;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    color: #000;
+}
+.ghqr-container >.con .ul .li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24rpx;
+}
+.ghqr-container >.con .ul .li .span{
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #888;
+}
+.ghqr-container >.con .ul .li .p{
+    width: 400rpx;
+    text-align: right;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.ghqr-container >.con .add{
+    padding-bottom: 80rpx;
+}
+.ghqr-container >.con .add .img{
+    padding: 50rpx 30rpx;
+    border: 1px solid #ddd;
+    background: #FDFDFD;
+    border-radius: 8rpx;
+}
+.ghqr-container >.con .add .img image{
+    width: 206rpx;
+    height: 44rpx;
+}
+.ghqr-container >.con .add .con{
+    display: flex;
+    align-items: center;
+    width: 630rpx;
+    height: 148rpx;
+    padding: 0 30rpx;
+    background: #FBF6FF;
+    border-radius: 8rpx;
+}
+.ghqr-container >.con .add .con .l{
+    margin-right: 48rpx;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+}
+.ghqr-container >.con .add .con .m{
+    margin-right: 136rpx;
+}
+.ghqr-container >.con .add .con .m .p{
+    font-size: 28rpx;
+    color: #888;
+    line-height: 36rpx;
+}
+.ghqr-container >.con .add .con .m .p:last-of-type .i{
+    margin-right: 20rpx;
+    font-size: 26rpx;
+    color: #888;
+    line-height: 36rpx;
+}
+.ghqr-container >.con .add .con .m .p:last-of-type .span{
+    font-size: 24rpx;
+    color: #FF8336;
+    line-height: 34rpx;
+    background: #FFF4E8;
+}
+.ghqr-container >.con .add .con .b{
+    display: flex;
+    align-items: center;
+}
+.ghqr-container >.con .add .con .b .i{
+    font-size: 26rpx;
+    color: #888;
+    line-height: 36rpx;
+}
+.ghqr-container >.con .add .con .b image{
+    margin-left: 6rpx;
+    width: 26rpx;
+    height: 26rpx;
+}
+.ghqr-container >.con .add >.p{
+    margin-top: 16rpx;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #888;
+}
+.ghqr-container >.con .add >.p .span{
+    color: #64338E;
+}
+.ghqr-container .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 88rpx;
+    width: 100%;
+    height: 116rpx;
+    line-height: 116rpx;
+    text-align: center;
+    border-top: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    overflow: hidden;
+}
+.ghqr-container .btn button{
+    width: 550rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: #7C509D;
+    border-radius: 40rpx;
+}
