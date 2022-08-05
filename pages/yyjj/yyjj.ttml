@@ -1,5 +1,5 @@
 <view class="yyjj-container">
-	<image tt:if="{{tabInde == 0}}" src="../../assets/imgs/example.png"></image>
+	<image tt:if="{{tabIndex == 0}}" src="../../assets/imgs/example.png"></image>
 	<image tt:else src="../../assets/imgs/example.png"></image>
 	<view class="tab">
 		<view class="ol">

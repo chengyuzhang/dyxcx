@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": 1659678585925,
+      "current": 1659680152692,
       "list": [
         {
           "id": 1659511353198,
@@ -125,6 +125,15 @@
           "id": 1659678585925,
           "name": "医院简介",
           "pathName": "pages/yyjj/yyjj",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659680152692,
+          "name": "我的",
+          "pathName": "pages/my/my",
           "query": "",
           "scene": "990001",
           "launchFrom": "scan",
