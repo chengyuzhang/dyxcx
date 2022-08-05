@@ -1,0 +1,80 @@
+.yyjj-container {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.yyjj-container image {
+	width: 100%;
+	height: 300rpx;
+}
+
+.yyjj-container .tab {
+	position: relative;
+	z-index: 2;
+	margin-top: -20rpx;
+	width: 100%;
+	padding: 0 30rpx;
+	border-radius: 20rpx;
+	background: #fff;
+}
+
+.yyjj-container .tab .ol {
+	display: flex;
+	width: 100%;
+	padding-left: 30rpx;
+}
+
+.yyjj-container .tab .ol .li {
+	position: relative;
+	margin-right: 80rpx;
+	padding-top: 32rpx;
+	padding-bottom: 44rpx;
+}
+
+.yyjj-container .tab .ol .li .i {
+	font-size: 30rpx;
+	line-height: 42rpx;
+	color: #999;
+	transition: all .2s;
+}
+
+.yyjj-container .tab .ol .li .span {
+	position: absolute;
+	left: 50%;
+	bottom: 30rpx;
+	transform: translateX(-50%);
+	width: 40rpx;
+	height: 8rpx;
+	background: #9286E9;
+	border-radius: 4rpx;
+	opacity: 0 ;
+	transition: all .2s;
+}
+
+.yyjj-container .tab .ol .li.active {}
+
+.yyjj-container .tab .ol .li.active .i {
+	font-weight: 600;
+	font-size: 36rpx;
+	line-height: 50rpx;
+	color: #333;
+}
+
+.yyjj-container .tab .ol .li.active .span {
+	opacity: 1;
+}
+
+.yyjj-container .tab .ul {}
+
+.yyjj-container .tab .ul .li {}
+
+.yyjj-container .tab .ul .li .p {
+	display: block;
+	margin-bottom: 50rpx;
+	font-size: 28rpx;
+	line-height: 44rpx;
+	color: #444;
+}

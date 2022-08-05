@@ -8,7 +8,12 @@ Component({
   },
   methods: {
     toPage(){
-      this.data.Event()
+      let myEventDetail = {a:1}
+      
+      this.triggerEvent(
+        'Event',
+        myEventDetail
+      )
     }
   }
 })

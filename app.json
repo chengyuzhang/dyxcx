@@ -8,7 +8,14 @@
         "pages/ksjs/ksjs",
         "pages/ksys/ksys",
         "pages/ysjsxq/ysjsxq",
-        "pages/jcjg/jcjg"
+        "pages/jcjg/jcjg",
+        "pages/jcjgxq/jcjgxq",
+        "pages/zjjs/zjjs",
+        "pages/zjjsxq/zjjsxq",
+        "pages/yfxx/yfxx",
+        "pages/wzxq/wzxq",
+        "pages/yydt/yydt",
+        "pages/yyjj/yyjj"
     ],
     "window": {
         "backgroundTextStyle": "light",

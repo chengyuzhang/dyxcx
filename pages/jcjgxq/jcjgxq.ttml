@@ -1,0 +1,28 @@
+<view class="jcjgxq-container">
+	<view class="h5"></view>
+	<view class="top">
+		<view class="ul">
+			<view class="li" tt:for="{{3}}">
+				<text class="span">姓名</text>
+				<text class="i">小星星</text>
+			</view>
+		</view>
+	</view>
+	<view class="ul">
+		<view class="li bar">
+			<text class="span">项目</text>
+			<text class="i">结果</text>
+			<text class="em">单位</text>
+			<text class="b">参考范围</text>
+		</view>
+		<view class="li" tt:for="{{4}}">
+			<text class="span">快速C-反应蛋白</text>
+			<text class="i"><8.0</text>
+			<text class="em">mg/L</text>
+			<text class="b"><8</text>
+		</view>
+	</view>
+	<view class="btn">
+		<button>下载PDF</button>
+	</view>
+</view>

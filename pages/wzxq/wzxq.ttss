@@ -1,0 +1,82 @@
+.wzxx-container {
+	width: 100%;
+	height: 100%;
+	padding: 0 30rpx;
+	padding-top: 50rpx;
+	background: #fff;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.wzxx-container .h5 {
+	font-size: 36rpx;
+	color: #000;
+	line-height: 50rpx;
+}
+
+.wzxx-container .top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 48rpx;
+}
+
+.wzxx-container .top .l {
+	display: flex;
+	align-items: center;
+}
+
+.wzxx-container .top .l image {
+	margin-right: 20rpx;
+	width: 68rpx;
+	height: 68rpx;
+}
+
+.wzxx-container .top .l .ll {}
+
+.wzxx-container .top .l .ll .h5 {
+	font-size: 28rpx;
+	color: #000;
+	line-height: 4rpx;
+}
+
+.wzxx-container .top .l .ll .p {
+	font-size: 24rpx;
+	color: #333;
+	line-height: 34rpx;
+}
+
+.wzxx-container .top .l .ll .p .i {
+	margin-right: 18rpx;
+	padding: 4rpx;
+	font-size: 20rpx;
+	color: #535353;
+	line-height: 26rpx;
+	background: #E8E8E8;
+}
+
+.wzxx-container .top .l .ll .p .span {}
+
+.wzxx-container .top .p.r {
+	font-size: 26rpx;
+	color: #999;
+	line-height: 30rpx;
+}
+
+.wzxx-container .con {
+	margin-top: 48rpx;
+}
+
+.wzxx-container .con .p {
+	display: block;
+	margin-bottom: 6rpx;
+	font-size: 28rpx;
+	color: #444;
+	line-height: 48rpx;
+}
+
+.wzxx-container .con image {
+	margin-top: 40rpx;
+	margin-bottom: 60rpx;
+	width: 100%;
+}

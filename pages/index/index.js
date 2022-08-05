@@ -46,51 +46,68 @@ Page({
     })
   },
   toMore(){
-
+    if(this.data.tabIndex == 0){
+      tt.navigateTo({
+        url: `/pages/yydt/yydt`
+      })
+    }else{
+      tt.navigateTo({
+        url: `/pages/yfxx/yfxx`
+      })
+    }
   },
   selectZone(){
     tt.navigateTo({
       url: `/pages/xzks/xzks`
-    });
+    })
   },
   orderRegister(){
     this.setData({
       showSelectZone: true
     })
   },
-  toJcjgPage(){},
+  toJcjgPage(){
+    tt.navigateTo({
+      url: '/pages/jcjg/jcjg'
+    })
+  },
   toPage(ev){
     let idx = ev.currentTarget.dataset.idx
     let path = ''
     switch(idx){
       case 0:
-        path = '/xzhy'
+        path = '/pages/xzhy/xzhy'
       break;
       case 1:
-        path = '/zjjs'
+        path = '/pages/zjjs/zjjs'
       break;
       case 2:
-        path = '/zjjs'
+        path = '/pages/zjjs/zjjs'
       break;
       case 3:
-        path = '/jzxz'
+        path = '/pages/jzxz/jzxz'
       break;
       case 4:
-        path = '/yfxx'
+        path = '/pages/yfxx/yfxx'
       break;
       case 5:
-        path = '/yyjj'
+        path = '/pages/yyjj/yyjj'
       break;
       case 6:
-        path = '/yydt'
+        path = '/pages/yydt/yydt'
       break;
       case 7:
-        path = '/yqwz'
+        path = '/pages/yqwz/yqwz'
       break;
     }
 
-    this.$router.push({
-      path
+    tt.navigateTo({
+      url: path
     })
   },
+  toDetailPage(){
+  	tt.navigateTo({
+      url: '/pages/wzxq/wzxq'
+    })
+  }
 })

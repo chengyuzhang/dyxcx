@@ -33,5 +33,10 @@ Page({
     this.setData({
       tabIndex: idx
     })
+  },
+  toPage(){
+    tt.navigateTo({
+      url: '/pages/jcjgxq/jcjgxq'
+    })
   }
 })

@@ -1,0 +1,133 @@
+.jcjgxq-container {
+	width: 100%;
+	height: 100%;
+	background: #F8F8F8;
+}
+
+.jcjgxq-container .h5 {
+	padding: 20rpx 30rpx;
+	font-size: 28rpx;
+	color: #000;
+	line-height: 40rpx;
+}
+
+.jcjgxq-container .top {}
+
+.jcjgxq-container .top .ul {
+	padding: 0 30rpx;
+	padding-top: 32rpx;
+	background: #fff;
+	overflow: hidden;
+}
+
+.jcjgxq-container .top .ul .li {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 32rpx;
+}
+
+.jcjgxq-container .top .ul .li .span {
+	font-size: 30rpx;
+	color: #999;
+	line-height: 42rpx;
+}
+
+.jcjgxq-container .top .ul .li .i {
+	font-size: 30rpx;
+	color: #666;
+	line-height: 42rpx;
+}
+
+.jcjgxq-container>.ul {
+	margin-top: 32rpx;
+	padding-top: 36rpx;
+	background: #fff;
+	overflow: hidden;
+}
+
+.jcjgxq-container>.ul .li {
+	margin-bottom: 38rpx;
+	padding: 0 32rpx;
+}
+
+.jcjgxq-container>.ul .li .span {
+	display: inline-block;
+	margin-right: 80rpx;
+	width: 200rpx;
+	font-size: 26rpx;
+	color: #999;
+	line-height: 36rpx;
+}
+
+.jcjgxq-container>.ul .li .i {
+	display: inline-block;
+	margin-right: 90rpx;
+	width: 60rpx;
+	font-size: 26rpx;
+	color: #999;
+	line-height: 36rpx;
+}
+
+.jcjgxq-container>.ul .li .em {
+	display: inline-block;
+	margin-right: 76rpx;
+	width: 60rpx;
+	font-size: 26rpx;
+	color: #999;
+	line-height: 36rpx;
+}
+
+.jcjgxq-container>.ul .li .b {
+	display: inline-block;
+	width: 120rpx;
+	font-size: 26rpx;
+	color: #999;
+	line-height: 36rpx;
+}
+
+.jcjgxq-container>.ul .li.bar .span {
+	font-size: 30rpx;
+	color: #333;
+	line-height: 42rpx;
+}
+
+.jcjgxq-container>.ul .li.bar .i {
+	font-size: 30rpx;
+	color: #333;
+	line-height: 42rpx;
+}
+
+.jcjgxq-container>.ul .li.bar .em {
+	font-size: 30rpx;
+	color: #333;
+	line-height: 42rpx;
+}
+
+.jcjgxq-container>.ul .li.bar .b {
+	font-size: 30rpx;
+	color: #333;
+	line-height: 42rpx;
+}
+
+.jcjgxq-container .btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 88rpx;
+	width: 100%;
+	height: 116rpx;
+	line-height: 116rpx;
+	text-align: center;
+	/* border-top: 1rpx solid #eee; */
+	overflow: hidden;
+}
+
+.jcjgxq-container .btn button {
+	width: 550rpx;
+	height: 84rpx;
+	line-height: 84rpx;
+	font-size: 28rpx;
+	color: #fff;
+	background: #7C509D;
+	border-radius: 40rpx;
+}

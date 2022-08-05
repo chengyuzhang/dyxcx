@@ -63,10 +63,10 @@
             <view class="more" bindtap="toMore">更多</view>
         </view>
         <view class="items" tt:if="{{tabIndex == 0}}">
-            <Item tt:for="{{4}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
+            <Item tt:for="{{4}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
         </view>
         <view class="items" tt:if="{{tabIndex == 1}}">
-            <Item tt:for="{{5}}" :Event="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
+            <Item tt:for="{{5}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
         </view>
     </view>
     <view class="select-zone" tt:if="{{showSelectZone}}">

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "Item": "../../components/Item/Item"
+    },
+    "navigationBarTitleText": "医院动态"
+}

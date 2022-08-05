@@ -1,0 +1,31 @@
+.yfxx-container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.yfxx-container .items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 30rpx;
+	padding-top: 30rpx;
+}
+
+.yfxx-container .items>>>.item-container {
+	padding: 30rpx 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+.yfxx-container .items>image {
+	margin-top: 248rpx;
+	width: 344rpx;
+}
+
+.yfxx-container .items>.p {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	color: #999;
+}
