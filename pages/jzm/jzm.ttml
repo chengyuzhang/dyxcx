@@ -1,0 +1,5 @@
+<view class="jzm-container">
+	<view class="h6">星星 2101**********0081</view>
+	<image src="../../assets/imgs/er-code.png"></image>
+	<text class="p">门诊号码 0012376515</text>
+</view>

@@ -1,0 +1,31 @@
+<view class="jzrgl-container">
+	<view class="ul">
+		<view class="li" tt:for="{{5}}">
+			<view class="con">
+				<view class="p one">
+					<text class="span">星星</text>
+					<text class="i zf">自费</text>
+					<text class="i ybbx">医保报销</text>
+				</view>
+				<view class="p two">
+					<text class="span">门诊号码</text>
+					<text class="i">0012376515</text>
+				</view>
+				<view class="p three">
+					<text class="span">星星</text>
+					<text class="i">2101**********0081</text>
+				</view>
+				<image class="code" src="../../assets/imgs/code.png" bindtap="toCodePage"></image>
+				<button data-idx="{{index}}" bindtap="deleteFn">删除</button>
+			</view>
+			<image class="bg" src="../../assets/imgs/card-bg.png" bindtap="toCodePage"></image>
+		</view>
+	</view>
+	<view class="none" tt:if="{{!isHas}}">
+		<image src="../../assets/imgs/none.png"></image>
+		<text class="p">暂无预约记录</text>
+	</view>
+	<view class="btn">
+		<image src="../../assets/imgs/btn-bg.png" bindtap="toAddPage"></image>
+	</view>
+</view>

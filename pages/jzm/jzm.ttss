@@ -1,0 +1,22 @@
+.jzm-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	}
+.jzm-container .h6{
+		margin-top: 92rpx;
+		font-size: 28rpx;
+		color: #333;
+		line-height: 40rpx;
+		}
+.jzm-container image{
+		margin-top: 118rpx;
+		margin-bottom: 24rpx;
+		width: 650rpx;
+		height: 160rpx;
+		}
+.jzm-container .p{
+		font-size: 28rpx;
+		color: #333;
+		line-height: 40rpx;
+		}

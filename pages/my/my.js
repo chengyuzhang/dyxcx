@@ -24,8 +24,8 @@ Page({
 	},
 
 	toJzrglPage(){
-		this.$router.push({
-			path: '/jzrgl'
+		tt.navigateTo({
+			url: '/pages/jzrgl/jzrgl'
 		})
 	},
 	toAddPage(){
