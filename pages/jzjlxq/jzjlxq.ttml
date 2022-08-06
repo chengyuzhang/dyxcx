@@ -1,0 +1,35 @@
+<view class="jzjlxq-container">
+	<view class="wrap" tt:if="{{isHas}}">
+		<view class="h5">东城区妇幼保健院(南区)</view>
+		<view class="con">
+			<view class="div">
+				<view class="l">
+					<view class="h6">张英超</view>
+					<view class="p">
+						<text class="i">门诊</text>
+						<text class="span">2022-05-07</text>
+					</view>
+				</view>
+				<view class="p">咳嗽、呼吸道感染</view>
+			</view>
+		</view>
+		<view class="ul">
+			<view class="li">
+				<view class="h6">症状:</view>
+				<text class="p">咳嗽，咽干红，扁桃体大</text>
+			</view>
+			<view class="li">
+				<view class="h6">症状:</view>
+				<text class="p">咳嗽，咽干红，扁桃体大</text>
+			</view>
+			<view class="li">
+				<view class="h6">症状:</view>
+				<text class="p">咳嗽，咽干红，扁桃体大</text>
+			</view>
+		</view>
+	</view>
+	<view class="none" tt:else>
+		<image src="../../assets/imgs/none.png"></image>
+		<text class="p">网络未连接请检查网络</text>
+	</view>
+</view>

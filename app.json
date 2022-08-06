@@ -20,7 +20,8 @@
         "pages/jzrgl/jzrgl",
         "pages/jzm/jzm",
         "pages/tjbg/tjbg",
-        "pages/jzjl/jzjl"
+        "pages/jzjl/jzjl",
+        "pages/jzjlxq/jzjlxq"
     ],
     "window": {
         "backgroundTextStyle": "light",

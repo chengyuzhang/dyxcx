@@ -25,4 +25,9 @@ Page({
       showList: false
     })
   },
+  toPage(){
+    tt.navigateTo({
+      url: '/pages/jzjlxq/jzjlxq'
+    })
+  }
 })
