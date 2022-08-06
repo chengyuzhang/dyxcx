@@ -1,0 +1,35 @@
+<view class="yyjlxq-container">
+	<view class="wrap" tt:if="{{isHas}}">
+		<text class="h5">已就诊</text>
+		<view class="ul one">
+			<view class="li" tt:for="{{8}}">
+				<text class="span">就诊人</text>
+				<text class="i">星星</text>
+			</view>
+			<view class="li">
+				<text class="span">可退号时间</text>
+				<text class="i">2022年10月10日 00:00-2022年10月10日 00:00</text>
+			</view>
+		</view>
+		<view class="xz">
+			<text class="h5">预约须知</text>
+			<text class="p">上午号请于11:30之前取号，下午号请于16:30之前取号，过时无法取号。次日24点之前可在微信服务号自助机挂号。</text>
+		</view>
+		<view class="ul two">
+			<view class="li">
+				<text class="span">订单号</text>
+				<text class="i">2298938494303458459845</text>
+			</view>
+			<view class="li">
+				<text class="span">下单时间</text>
+				<text class="i">2022-10-10 10:43:47</text>
+			</view>
+		</view>
+		<button>取消预约</button>
+	</view>
+	<view class="none" tt:else>
+		<image src="../../assets/imgs/none.png"></image>
+		<text class="p">暂无预约记录</text>
+		<button bindtap="toXzhyPage">去挂号</button>
+	</view>
+</view>

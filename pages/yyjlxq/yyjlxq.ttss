@@ -1,0 +1,143 @@
+.yyjlxq-container {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 50rpx;
+	background: #F8F8F8;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.yyjlxq-container .wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.yyjlxq-container .wrap>.h5 {
+	width: 100%;
+	padding: 18rpx 0;
+	padding-left: 30rpx;
+	font-size: 32rpx;
+	line-height: 44rpx;
+	color: #333;
+}
+
+.yyjlxq-container .wrap .ul.one {
+	width: 100%;
+	padding-left: 30rpx;
+	background: #fff;
+}
+
+.yyjlxq-container .wrap .ul.one .li {
+	display: flex;
+	align-items: flex-start;
+	padding: 22rpx 0;
+	border-bottom: 1rpx solid #E7E7E7;
+}
+
+.yyjlxq-container .wrap .ul.one .li .span {
+	width: 210rpx;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #888;
+}
+
+.yyjlxq-container .wrap .ul.one .li .i {
+	width: 480rpx;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #333;
+}
+
+.yyjlxq-container .wrap .xz {
+	margin-top: 32rpx;
+	padding: 20rpx 30rpx;
+	background: #fff;
+}
+
+.yyjlxq-container .wrap .xz .h5 {
+	display: block;
+	font-size: 28rpx;
+	line-height: 44rpx;
+	color: #444;
+}
+
+.yyjlxq-container .wrap .xz .p {
+	margin-top: 10rpx;
+	fonr-weight: 400;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #666;
+}
+
+.yyjlxq-container .wrap .ul.two {
+	margin-top: 32rpx;
+	width: 100%;
+	overflow: hidden;
+}
+
+.yyjlxq-container .wrap .ul.two .li {
+
+	display: flex;
+	justify-content: space-between;
+	padding-left: 30rpx;
+	padding-right: 60rpx;
+	margin-bottom: 16rpx;
+}
+
+.yyjlxq-container .wrap .ul.two .li .span {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #888;
+}
+
+.yyjlxq-container .wrap .ul.two .li .i {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	color: #333;
+}
+
+.yyjlxq-container .wrap button {
+	margin-top: 50rpx;
+	margin-right: 30rpx;
+	width: 156rpx;
+	height: 56rpx;
+	line-height: 56rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #4F4F4F;
+	border: 1px solid #aaa;
+	border-radius: 6rpx;
+}
+
+.yyjlxq-container .none {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.yyjlxq-container .none>image {
+	margin-top: 248rpx;
+	width: 344rpx;
+	height: 334rpx;
+}
+
+.yyjlxq-container .none>.p {
+	display: block;
+	width: 100%;
+	font-size: 28rpx;
+	line-height: 40rpx;
+	text-align: center;
+	color: #999;
+}
+
+.yyjlxq-container .none button {
+	margin-top: 68rpx;
+	width: 55prpx;
+	height: 84rpx;
+	line-height: 84rpx;
+	font-size: 28rpx;
+	color: #fff;
+	background: #7C509D;
+	border-radius: 40rpx;
+}

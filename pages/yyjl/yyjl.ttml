@@ -1,0 +1,44 @@
+<view class="yyjl-container">
+	<view class="top">
+		<view class="p" bindtap="showListFn">
+			<text class="i">就诊人</text>
+			<text class="span">星星</text>
+			<image src="../../assets/imgs/arrow-down.png"></image>
+		</view>
+		<view class="ul" tt:if="{{showList}}">
+			<view class="li" tt:for="{{4}}">
+				<view class="l">
+					<text class="span">星星</text>
+					<view class="div">
+						<view class="h6">1578 944 9888</view>
+						<view class="p">
+							<text class="i">北京社保卡</text>
+							<text class="span ybbx">医保报销</text>
+							<text class="span zf">自费</text>
+						</view>
+					</view>
+				</view>
+				<image tt:if="{{activeIndex == index}}" src="../../assets/imgs/ok.png"></image>
+				<image tt:else src="../../assets/imgs/ok-space.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="ul">
+		<view class="li" tt:for="{{5}}" bindtap="toPage">
+			<view class="top">
+				<view class="l">
+					<text class="h6">儿内科主任医师</text>
+					<text class="p">儿内科 东城妇幼保健院(南区)</text>
+				</view>
+				<view class="p">预约成功</view>
+			</view>
+			<view class="ol">
+				<view class="li" tt:for="{{4}}">
+					<text class="span">就诊人</text>
+					<text class="i">星星</text>
+				</view>
+			</view>
+			<button catchtap="cancelOrder">取消预约</button>
+		</view>
+	</view>
+</view>

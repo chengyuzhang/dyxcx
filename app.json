@@ -21,7 +21,9 @@
         "pages/jzm/jzm",
         "pages/tjbg/tjbg",
         "pages/jzjl/jzjl",
-        "pages/jzjlxq/jzjlxq"
+        "pages/jzjlxq/jzjlxq",
+        "pages/yyjl/yyjl",
+        "pages/yyjlxq/yyjlxq"
     ],
     "window": {
         "backgroundTextStyle": "light",
