@@ -48,4 +48,5 @@
 			</view>
 		</view>
 	</view>
+    <nav-bar idx=1></nav-bar>
 </view>

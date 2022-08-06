@@ -29,29 +29,32 @@ Page({
 		})
 	},
 	toAddPage(){
-		this.$router.push({
-			path: '/tjjzr'
+		tt.navigateTo({
+			url: '/pages/tjjzr/tjjzr'
 		})
 	},
-	toPage(idx){
+	toPage(ev){
+		let idx = ev.currentTarget.dataset.idx
 		let path = ''
+		
 		switch(idx){
-			case 0:
-				path = '/jzjl'
+			case '0':
+				path = '/pages/jzjl/jzjl'
 			break;
-			case 1:
-				path = '/yyjl'
+			case '1':
+				path = '/pages/yyjl/yyjl'
 			break;
-			case 2:
-				path = '/jcjg'
+			case '2':
+				path = '/pages/jcjg/jcjg'
+				console.log(23123)
 			break;
-			case 3:
-				path = '/tjbg'
+			case '3':
+				path = '/pages/tjbg/tjbg'
 			break;
 		}
 
-		this.$router.push({
-			path
+		tt.navigateTo({
+			url: path
 		})
 	},
 })

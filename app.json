@@ -18,7 +18,9 @@
         "pages/yyjj/yyjj",
         "pages/my/my",
         "pages/jzrgl/jzrgl",
-        "pages/jzm/jzm"
+        "pages/jzm/jzm",
+        "pages/tjbg/tjbg",
+        "pages/jzjl/jzjl"
     ],
     "window": {
         "backgroundTextStyle": "light",

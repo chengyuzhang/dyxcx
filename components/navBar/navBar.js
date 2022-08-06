@@ -18,17 +18,17 @@ Component({
         currentIndex: idx
       })
 
-			// if(idx == 0){
-			// 	this.$router.push({
-			// 		path: '/'
-			// 	})
-			// }
+			if(idx == 0){
+				tt.navigateTo({
+          url: '/pages/index/index'
+        })
+			}
 
-			// if(idx == 1){
-			// 	this.$router.push({
-			// 		path: '/my'
-			// 	})
-			// }
+			if(idx == 1){
+				tt.navigateTo({
+          url: '/pages/my/my'
+        })
+			}
 		}
   }
 })

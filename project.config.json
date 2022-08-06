@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": -1,
+      "current": 1659749653695,
       "list": [
         {
           "id": 1659511353198,
@@ -152,6 +152,24 @@
           "id": 1659705474660,
           "name": "就诊码",
           "pathName": "pages/jzm/jzm",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659748157322,
+          "name": "体检报告",
+          "pathName": "pages/tjbg/tjbg",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1659749653695,
+          "name": "就诊记录",
+          "pathName": "pages/jzjl/jzjl",
           "query": "",
           "scene": "990001",
           "launchFrom": "scan",
