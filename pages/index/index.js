@@ -1,5 +1,8 @@
 const app = getApp()
-
+import { indexAbout } from '../../request/api.js'
+// import { api } from '../../request/request.js'
+// console.log(api)
+console.log(indexAbout)
 Page({
   data: {
     showSelectZone: false,
@@ -31,8 +34,16 @@ Page({
       },
     ],
   },
-  onLoad: function () {
-    console.log('Welcome to Mini Code')
+  onLoad: async function () {
+    await indexAbout.getInfosDetail({
+      articleId: 43528
+    }, {
+      browserId: 5
+    }).then(res => {
+      console.log('ressss', res)
+   }).catch(err => {
+      console.log('err', err)
+    })
   },
   showSelectZoneFn(){
     this.setData({
