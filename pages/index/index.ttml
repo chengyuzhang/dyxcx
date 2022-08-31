@@ -37,14 +37,8 @@
     </view>
     <view class="banner">
         <swiper indicator-dots circular>
-            <swiper-item>
-                <image src="../../assets/imgs/example.png"></image>
-            </swiper-item>
-            <swiper-item>
-                <image src="../../assets/imgs/example.png"></image>
-            </swiper-item>
-            <swiper-item>
-                <image src="../../assets/imgs/example.png"></image>
+            <swiper-item tt:for="{{ads}}">
+                <image :src="{{item.picture}}"></image>
             </swiper-item>
         </swiper>
     </view>

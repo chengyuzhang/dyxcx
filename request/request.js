@@ -2,7 +2,11 @@ let requestCount = 0
 
 export const api = {
     async get(url, data = {}, header = {}){
-        header = Object.assign({}, header)
+        
+        let token = tt.getStorageSync('token')
+        header = Object.assign({token}, header)
+		header = Object.assign({hospitalId: 1}, header)
+        console.log('token', header)
         requestCount ++
         tt.showLoading({
             title: '请求中'
@@ -20,8 +24,8 @@ export const api = {
                         wx.hideLoading()
                     }
 
-                    if(res.statusCode == 200){
-                        resolve(res.data.body)
+                    if(res.data.code == 200){
+                        resolve(res.data)
                     }
                 },
                 fail(){

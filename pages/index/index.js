@@ -1,8 +1,7 @@
 const app = getApp()
-import { indexAbout } from '../../request/api.js'
+import { index } from '../../request/api.js'
 // import { api } from '../../request/request.js'
-// console.log(api)
-console.log(indexAbout)
+
 Page({
   data: {
     showSelectZone: false,
@@ -33,16 +32,21 @@ Page({
         title: '院区位置'
       },
     ],
+    ads: []
   },
   onLoad: async function () {
-    await indexAbout.getInfosDetail({
-      articleId: 43528
-    }, {
-      browserId: 5
+    this.getAds()
+  },
+  getAds(){
+    index.getAds({
+      spaceCode: 'SY-ZB'
     }).then(res => {
-      console.log('ressss', res)
-   }).catch(err => {
-      console.log('err', err)
+      console.log('getAds-res', res)
+      this.setData({
+        ads: res.data
+      })
+    }).catch(err => {
+      console.log('getAds-err'. err)
     })
   },
   showSelectZoneFn(){
