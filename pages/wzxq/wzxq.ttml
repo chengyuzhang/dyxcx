@@ -1,23 +1,19 @@
 <view class="wzxx-container">
-	<view class="h5">抗疫前线的最强战斗堡垒！</view>
+	<view class="h5">{{title}}</view>
 	<view class="top">
 		<view class="l">
-			<image src="../../assets/imgs/people.png"></image>
+			<image src="{{doctorPicture}}"></image>
 			<view class="ll">
-				<text class="h5">张晓红</text>
+				<text class="h5">{{doctorName}}</text>
 				<view class="p">
-					<text class="i">知名专家</text>
-					<text class="span">儿内科</text>
+					<text class="i">{{doctorAcademic}}</text>
+					<text class="span">{{doctorOffice}}</text>
 				</view>
 			</view>
 		</view>
-		<view class="p r">2022-05-07 15:37</view>
+		<view class="p r">{{updateTime}}</view>
 	</view>
 	<view class="con">
-		<text class="p">目的:探讨小儿早期甲型流感的有效治疗方法。方法:将240例早期甲型流感患儿按就诊日期的单双数分为对照组和观察组各120例，对照组采用磷酸奥司他韦颗粒治疗，2.0～2.5mg/kg，温开水冲服。</text>
-		<text class="p">每天2次，观察组在对照组基础上联合蓝芩口服液2～5岁每次5mL,>5岁每次10mL，每天3次治疗，两组均治疗5d为1个疗程，观察两组患儿的症状恢复情况、药物不良反应及总体疗效。</text>
-		<image src="../../assets/imgs/example.png"></image>
-		<text class="p">目的:探讨小儿早期甲型流感的有效治疗方法。方法:将240例早期甲型流感患儿按就诊日期的单双数分为对照组和观察组各120例，对照组采用磷酸奥司他韦颗粒治疗，2.0～2.5mg/kg，温开水冲服。</text>
-		<text class="p">每天2次，观察组在对照组基础上联合蓝芩口服液2～5岁每次5mL,>5岁每次10mL，每天3次治疗，两组均治疗5d为1个疗程，观察两组患儿的症状恢复情况、药物不良反应及总体疗效。</text>
+		<rich-text nodes="{{content}}"></rich-text>
 	</view>
 </view>

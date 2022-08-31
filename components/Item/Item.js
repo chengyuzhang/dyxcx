@@ -4,11 +4,12 @@ Component({
 
   },
   properties: {
-    Event: null
+    Event: null,
+    obj: null
   },
   methods: {
     toPage(){
-      let myEventDetail = {a:1}
+      let myEventDetail = this.data.obj
       
       this.triggerEvent(
         'Event',

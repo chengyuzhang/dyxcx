@@ -1,5 +1,5 @@
 const app = getApp()
-import { index } from '../../request/api.js'
+import { index, newsAbout } from '../../request/api.js'
 // import { api } from '../../request/request.js'
 
 Page({
@@ -32,10 +32,14 @@ Page({
         title: '院区位置'
       },
     ],
-    ads: []
+    ads: [],
+    yydtList: [],
+    yyxxList: []
   },
   onLoad: async function () {
     this.getAds()
+    this.getYydtInfoList()
+    this.getYyxxInfoList()
   },
   getAds(){
     index.getAds({
@@ -47,6 +51,34 @@ Page({
       })
     }).catch(err => {
       console.log('getAds-err'. err)
+    })
+  },
+  async getYydtInfoList(){
+    await newsAbout.getInfoList({
+      type: 2,
+      pageNo: 1,
+      pageSize: 5,
+    }).then(res => {
+      console.log('getYydtInfoList-res', res)
+      this.setData({
+        yydtList: res.data
+      })
+    }).catch(err => {
+      console.log('getYydtInfoList-err'. err)
+    })
+  },
+  async getYyxxInfoList(){
+    await newsAbout.getInfoList({
+      type: 1,
+      pageNo: 1,
+      pageSize: 5,
+    }).then(res => {
+      console.log('getYyxxInfoList-res', res)
+      this.setData({
+        yyxxList: res.data
+      })
+    }).catch(err => {
+      console.log('getYyxxInfoList-err'. err)
     })
   },
   showSelectZoneFn(){
@@ -120,9 +152,10 @@ Page({
       url: path
     })
   },
-  toDetailPage(){
+  toDetailPage(obj){
+    console.log(obj)
   	tt.navigateTo({
-      url: '/pages/wzxq/wzxq'
+      url: `/pages/wzxq/wzxq?id=${obj.detail.id}`
     })
   }
 })
