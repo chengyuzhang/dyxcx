@@ -60,7 +60,7 @@
             <Item tt:for="{{yydtList}}" obj="{{item}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
         </view>
         <view class="items" tt:if="{{tabIndex == 1}}">
-            <Item tt:for="{{yyxxList}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
+            <Item tt:for="{{yyxxList}}" obj="{{item}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
         </view>
     </view>
     <view class="select-zone" tt:if="{{showSelectZone}}">
