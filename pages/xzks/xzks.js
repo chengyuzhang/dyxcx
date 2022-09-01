@@ -7,54 +7,6 @@ Page({
     iH: 0,
     tabIndex: 0,
     sideTabs: [
-      {
-        title: 1231
-      },
-      {
-        title: 324324
-      },
-      {
-        title: 232
-      },
-      {
-        title: 234234
-      },
-      {
-        title: 1231
-      },
-      {
-        title: 3434
-      },
-      {
-        title: 434543
-      },
-      {
-        title: 76575
-      },
-      {
-        title: 1231
-      },
-      {
-        title: 324324
-      },
-      {
-        title: 232
-      },
-      {
-        title: 234234
-      },
-      {
-        title: 1231
-      },
-      {
-        title: 3434
-      },
-      {
-        title: 434543
-      },
-      {
-        title: 76575
-      }
     ],
     showSelectZone: false,
     childrenList: [],
@@ -129,9 +81,11 @@ Page({
       console.log('getOfficeTree-err', err)
     })
   },
-  toPage(){
+  toPage(ev){
+    let id = ev.currentTarget.dataset.id
+
     tt.navigateTo({
-      url: `/pages/xzhy/xzhy`
+      url: `/pages/xzhy/xzhy?id=${id}`
     });
   },
   setElHeight(){

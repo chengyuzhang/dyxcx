@@ -15,10 +15,10 @@
     </view>
     <view class="side-tab">
         <view class="ol" style="height:{{iH}}px;">
-            <view class="li {{tabIndex == index ? 'active': ''}}" tt:for={{sideTabs}} data-idx="{{index}}" bindtap="changeTab">{{item.name}}</view>
+            <view class="li {{tabIndex == index ? 'active': ''}}" tt:for={{sideTabs}} data-idx="{{index}}" data-obj="{{item}}" bindtap="changeTab">{{item.name}}</view>
         </view>
         <view class="ul" style="height:{{iH}}px;">
-            <view class="li" tt:for={{childrenList}} bindtap="toPage">{{item.name}}</view>
+            <view class="li" tt:for={{childrenList}} data-id="{{item.id}}" bindtap="toPage">{{item.name}}</view>
         </view>
     </view>
     <view class="select-zone" tt:if="{{showSelectZone}}">
