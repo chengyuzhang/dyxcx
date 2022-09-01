@@ -32,7 +32,8 @@ Page({
         skill: res.data.skill,
         intro: res.data.intro,
         officeName: res.data.officeName,
-        headPic: res.data.headPic
+        headPic: res.data.headPic,
+        officeId: res.data.officeId
       })
 
     }).catch(err => {
@@ -41,7 +42,7 @@ Page({
   },
   toPage(){
     tt.redirectTo({
-      url: '/pages/index/index'
+      url: `/pages/xzhy/xzhy?id=${this.data.officeId}`
     });
   },
 })

@@ -98,7 +98,7 @@
           "id": 1659664319404,
           "name": "专家介绍详情",
           "pathName": "pages/zjjsxq/zjjsxq",
-          "query": "",
+          "query": "id=0",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"

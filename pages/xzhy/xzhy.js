@@ -24,8 +24,6 @@ Page({
     timeShow: false,
     timeIndex: 0,
     date: '',
-    minDate: new Date(2022, 9, 1),
-    maxDate: new Date(2022, 10, 31),
     tabIndex: 0,
     tabStatus: 1,
     dateList: [
@@ -96,7 +94,7 @@ Page({
     let obj = ev.currentTarget.dataset.obj
 
     this.setData({
-      activeIndex: idx,
+      // activeIndex: idx,
       showCalendar: false,
       tabIndex: idx,
       clinicDate: obj.date,

@@ -1,7 +1,7 @@
 <view class="xzhy-container">
     <view class="top">
         <view class="h5">
-            <text class="i">儿内科</text>
+            <text class="i">{{officeName}}</text>
             <view class="p" bindtap="toPage">
                 <text>科室介绍</text>
                 <image src="../../assets/imgs/r.png"></image>
@@ -10,11 +10,11 @@
         <view class="ul">
             <view class="li">
                 <image src="../../assets/imgs/ly.png"></image>
-                <text class="p">东城妇幼保健院(南区)</text>
+                <text class="p">{{areaName}}</text>
             </view>
             <view class="li" style="margin-right:0;">
                 <image src="../../assets/imgs/gps.png"></image>
-                <text class="p">北京市东城区法华南里25号楼备份</text>
+                <text class="p">{{areaAddress}}</text>
             </view>
         </view>
     </view>
