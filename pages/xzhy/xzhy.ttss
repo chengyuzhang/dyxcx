@@ -222,7 +222,8 @@
     line-height: 40rpx;
 }
 .xzhy-container .tab-con.ready .span{
-    font-size: 32rpx;
+    margin-top: 16rpx;
+    font-size: 28rpx;
     color: #64338E;
     line-height: 44rpx;
 }
