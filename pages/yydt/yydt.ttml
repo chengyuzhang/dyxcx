@@ -1,7 +1,9 @@
 <view class="yfxx-container">
-	<view class="items">
-		<Item tt:if="{{items.length}}" tt:for="{{items}}" data-idx="{{index}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
-		<image tt:if="{{!items.length}}" src="../../assets/imgs/none.png"></image>
-		<text tt:if="{{!items.length}}" class="p">暂时没有文章</text>
+	<scroll-view tt:if="{{items.length}}" class="items" bindscroll="scroll" bindscrolltolower="lower" lower-threshold="{{50}}" scroll-y="{{true}}">
+		<Item tt:for="{{items}}" obj="{{item}}" data-idx="{{index}}" bindEvent="toDetailPage" style="display:block; margin-bottom:48rpx;"></Item>
+	</scroll-view>
+	<view tt:if="{{!items.length}}" class="items">	
+		<image src="../../assets/imgs/none.png"></image>
+		<text class="p">暂时没有文章</text>
 	</view>
 </view>

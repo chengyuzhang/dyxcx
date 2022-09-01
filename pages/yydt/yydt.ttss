@@ -10,8 +10,10 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 0 30rpx;
-	padding-top: 30rpx;
+	width: 100%;
+	height: 100%;
+	padding: 30rpx;
+	/* padding-top: 30rpx; */
 }
 
 .yfxx-container .items>>>.item-container {
@@ -20,8 +22,9 @@
 }
 
 .yfxx-container .items>image {
-	margin-top: 248rpx;
 	width: 344rpx;
+	height: 334rpx;
+	object-fit: contain;
 }
 
 .yfxx-container .items>.p {

@@ -153,7 +153,6 @@ Page({
     })
   },
   toDetailPage(obj){
-    console.log(obj)
   	tt.navigateTo({
       url: `/pages/wzxq/wzxq?id=${obj.detail.id}`
     })
