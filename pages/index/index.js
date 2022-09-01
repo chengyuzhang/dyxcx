@@ -1,5 +1,5 @@
 const app = getApp()
-import { index, newsAbout } from '../../request/api.js'
+import { index, newsAbout, areaAbout, noticeAbout } from '../../request/api.js'
 // import { api } from '../../request/request.js'
 
 Page({
@@ -34,12 +34,33 @@ Page({
     ],
     ads: [],
     yydtList: [],
-    yyxxList: []
+    yyxxList: [],
+    ghxzDeatil: '',
+    showGhxz: false
   },
   onLoad: async function () {
     this.getAds()
     this.getYydtInfoList()
     this.getYyxxInfoList()
+    this.getAreaList()
+    this.getGhxzDetails()
+  },
+  agreeGhxz(){
+    this.setData({
+      showGhxz: false
+    })
+  },
+  getGhxzDetails(){
+    noticeAbout.getGhxzDetails({
+
+    }).then(res => {
+      console.log('getGhxzDetails-res', res)
+      this.setData({
+        ghxzDeatil: res.data.content
+      })
+    }).catch(err => {
+      console.log('getGhxzDetails-err', err)
+    })
   },
   getAds(){
     index.getAds({
@@ -103,14 +124,11 @@ Page({
       })
     }
   },
-  selectZone(){
+  selectZone(ev){
+    let id = ev.currentTarget.dataset.id
+
     tt.navigateTo({
-      url: `/pages/xzks/xzks`
-    })
-  },
-  orderRegister(){
-    this.setData({
-      showSelectZone: true
+      url: `/pages/xzks/xzks?id=${id}`
     })
   },
   toJcjgPage(){
@@ -118,12 +136,23 @@ Page({
       url: '/pages/jcjg/jcjg'
     })
   },
+  orderRegister(){
+    this.setData({
+      showGhxz: true,
+      showSelectZone: true
+    })
+  },
   toPage(ev){
     let idx = ev.currentTarget.dataset.idx
     let path = ''
     switch(idx){
       case 0:
-        path = '/pages/xzhy/xzhy'
+        this.setData({
+          showGhxz: true,
+          showSelectZone: true,
+          isHs: true,
+        })
+        // path = '/pages/xzhy/xzhy'
       break;
       case 1:
         path = '/pages/zjjs/zjjs'
@@ -156,5 +185,17 @@ Page({
   	tt.navigateTo({
       url: `/pages/wzxq/wzxq?id=${obj.detail.id}`
     })
-  }
+  },
+  getAreaList(){
+    areaAbout.getAreaList({
+
+    }).then(res => {
+      console.log('getAreaList-res', res)
+      this.setData({
+        areaList: res.data
+      })
+    }).catch(err => {
+      console.log('getAreaList-err', err)
+    })
+  },
 })

@@ -67,17 +67,10 @@
         <view class="con">
             <view class="h5">选择院区</view>
             <view class="ul">
-                <view class="li">
-                    <view class="l" data-idx=0 bindtap="selectZone">
-                        <view class="h6">东城妇幼保健院(南区)</view>
-                        <view class="p">北京市东城区法华南里25号楼</view>
-                    </view>
-                    <image src="../../assets/imgs/r.png"></image>
-                </view>
-                <view class="li" data-idx=1 bindtap="selectZone">
-                    <view class="l">
-                        <view class="h6">东城妇幼保健院(北区)</view>
-                        <view class="p">北京市东城区交道口南大街136号</view>
+                <view class="li" tt:for="{{areaList}}">
+                    <view class="l" data-id="{{item.id}}" bindtap="selectZone">
+                        <view class="h6">{{item.name}}</view>
+                        <view class="p">{{item.address}}</view>
                     </view>
                     <image src="../../assets/imgs/r.png"></image>
                 </view>
@@ -85,6 +78,17 @@
             <button bindtap="showSelectZoneFn">取消</button>
         </view>
     </view>
-
+    <view class="ghxz-container" tt:if="{{showGhxz}}">
+        <view class="con">
+            <view class="h5">挂号须知</view>
+            <view class="wrap">
+                <rich-text
+                    nodes="{{ghxzDeatil}}"
+                >
+                </rich-text>
+            </view>
+            <button bindtap="agreeGhxz">已阅读并同意</button>
+        </view>
+    </view>
     <nav-bar idx=0></nav-bar>
 </view>

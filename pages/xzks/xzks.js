@@ -1,4 +1,7 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/xzks/xzks.js
+const util= require('../../util/util.js')
+import { index, officeAbout, areaAbout } from '../../request/api.js'
+
 Page({
   data: {
     iH: 0,
@@ -52,12 +55,57 @@ Page({
       {
         title: 76575
       }
-    ]
+    ],
+    childrenList: [],
+    areaList: [],
   },
   onLoad: function (options) {
+    this.setData({
+      id: options.id
+    })
 
+    this.getOfficeTree()
+    this.getAreaList()
   },
+  getAreaList(){
+    areaAbout.getAreaList({
 
+    }).then(res => {
+      console.log('getAreaList-res', res)
+      this.setData({
+        areaList: res.data
+      })
+    }).catch(err => {
+      console.log('getAreaList-err', err)
+    })
+  },
+  getAreaInfo(){
+    let area = this.data.areaList.filter((item, index) => {
+      return item.id == this.id
+    })
+    console.log('area', area)
+    this.setData({
+      name: area[0].name,
+      address: area[0].address,
+      picture: area[0].picture
+    })
+  },
+  getOfficeTree(){
+    officeAbout.getOfficeTree({
+      areaId: this.data.id
+    }).then(res => {
+      console.log('getOfficeTree-res', res)
+
+      this.setData({
+        sideTabs: res.data,
+        childrenList: res.data[0].children
+      })
+
+      console.log('d',this.data.childrenList)
+    }).catch(err => {
+      console.log('getOfficeTree-err', err)
+    })
+  },
   toPage(){
     tt.navigateTo({
       url: `/pages/xzhy/xzhy`
@@ -91,7 +139,8 @@ Page({
   changeTab(ev){
     let idx = ev.currentTarget.dataset.idx
     this.setData({
-      tabIndex: idx
+      tabIndex: idx,
+      childrenList: this.data.sideTabs[idx].children
     })
   },
   onReady(){

@@ -11,13 +11,13 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": -1,
+      "current": 1659511353198,
       "list": [
         {
           "id": 1659511353198,
           "name": "选择科室",
           "pathName": "pages/xzks/xzks",
-          "query": "",
+          "query": "id=2",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"
