@@ -41,32 +41,32 @@ Page({
   },
   getDoctorList(){
     doctotAbout.getDoctorList({
-      officeId: this.data.officeId,
-      pageNo: 1,
-      pageSize: 8
+      officeId: this.data.officeId
     }).then(res => {
       console.log('getDoctorList-res', res)
       this.setData({
-        doctorList: res.data.records,
-        total: res.data.total
+        doctorList: res.data,
+        total: res.data.length
       })
     }).catch(err => {
       console.log('getDoctorList-err', err)
     })
   },
   toPage(){
-    tt.navigateTo({
-      url: '/pages/xzhy/xzhy'
+    tt.redirectTo({
+      url: '/pages/index/index'
     });
   },
   toDoctorList(){
     tt.navigateTo({
-      url: '/pages/ksys/ksys'
+      url: `/pages/ksys/ksys?id=${this.data.officeId}`
     });
   },
-  toDoctorDetail(){
+  toDoctorDetail(ev){
+    let id = ev.currentTarget.dataset.id
+
     tt.navigateTo({
-      url: '/pages/ysjsxq/ysjsxq'
+      url: `/pages/ysjsxq/ysjsxq?id=${id}`
     });
   },
 })

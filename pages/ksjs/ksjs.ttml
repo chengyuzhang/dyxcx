@@ -25,7 +25,7 @@
                 </view>
             </view>
             <view class="ul">
-                <view class="li" tt:for="{{doctorList}}" bindtap="toDoctorDetail">
+                <view class="li" tt:for="{{doctorList}}" tt:if="{{index < 8}}" data-id="{{item.id}}" bindtap="toDoctorDetail">
                     <image src="{{item.headPic}}"></image>
                     <text class="h6">{{item.name}}</text>
                     <text class="p">{{item.academic}}</text>
