@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": 1659516340754,
+      "current": 1659598517185,
       "list": [
         {
           "id": 1659511353198,
@@ -53,7 +53,7 @@
           "id": 1659598517185,
           "name": "科室介绍",
           "pathName": "pages/ksjs/ksjs",
-          "query": "",
+          "query": "id=26",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"

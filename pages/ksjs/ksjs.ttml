@@ -3,32 +3,32 @@
         <view class="top">
             <view class="l">
                 <view class="h6">
-                    <text>东城妇幼保健院(南区)</text>
+                    <text>{{areaName}}</text>
                     <image src="../../assets/imgs/r.png"></image>
                 </view>
-                <view class="h5">儿内科门诊</view>
+                <view class="h5">{{name}}</view>
             </view>
             <button bindtap="toPage">去挂号</button>
         </view>
         <view class="middle">
             <view class="h5">擅长疾病</view>
-            <text class="p">新生儿疾病、小儿呼吸系统疾病、中西医结合</text>
-            <view class="h5">科室介绍</view>
-            <text class="p">科室组建于1968年，新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗。科室组建于1968年，新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗。科室组建于1968年，新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗。</text>
+            <text class="p">{{skill}}</text>
+            <view class="h5" style="margin-top:48rpx;">科室介绍</view>
+            <text class="p">{{intro}}</text>
         </view>
         <view class="bottom">
             <view class="bar">
-                <text class="span">科室医生（6个）</text>
+                <text class="span">科室医生（{{total}}个）</text>
                 <view class="p" bindtap="toDoctorList">
                     <text>全部医生</text>
                     <image src="../../assets/imgs/r.png"></image>
                 </view>
             </view>
             <view class="ul">
-                <view class="li" tt:for="{{6}}" bindtap="toDoctorDetail">
-                    <image src="../../assets/imgs/people.png"></image>
-                    <text class="h6">张晓红</text>
-                    <text class="p">主任医师</text>
+                <view class="li" tt:for="{{doctorList}}" bindtap="toDoctorDetail">
+                    <image src="{{item.headPic}}"></image>
+                    <text class="h6">{{item.name}}</text>
+                    <text class="p">{{item.academic}}</text>
                 </view>
             </view>
         </view>

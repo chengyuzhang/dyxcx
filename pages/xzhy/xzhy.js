@@ -149,7 +149,6 @@ Page({
     }).then(res => {
       console.log('getDutyDate-res', res)
       
-
       let dateList = res.data.ddList.map((item, index) => {
         item.title = util.formatDay(item.date)
         let arr = item.date.split('-')
@@ -157,14 +156,12 @@ Page({
         return item
       })
 
-
       this.setData({
         areaAddress: res.data.areaAddress,
         areaName: res.data.areaName,
         officeName: res.data.officeName,
         dateList
       })
-      console.log('dateList', dateList)
 
     }).catch(err => {
       console.log('getDutyDate-err', err)
@@ -174,7 +171,7 @@ Page({
     clearInterval(this.data.timer)
     let idx = ev.currentTarget.dataset.idx
     let obj = ev.currentTarget.dataset.obj
-    
+
     this.setData({
       tabIndex: idx,
       tabStatus: obj.status,
@@ -229,7 +226,7 @@ Page({
         remainMinutes: mins,
         remainSeconds: secs,
       })
-      console.log(this.data.remainSeconds)
+      // console.log(this.data.remainSeconds)
       if(this.data.remainTime < 0){
         clearInterval(this.data.timer)
       }
@@ -258,7 +255,7 @@ Page({
   },
   toPage(){
     tt.navigateTo({
-      url: '/pages/ksjs/ksjs'
+      url: `/pages/ksjs/ksjs?id=${this.data.officeId}`
     });
   }
 })
