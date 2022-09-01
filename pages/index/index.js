@@ -127,6 +127,9 @@ Page({
   selectZone(ev){
     let id = ev.currentTarget.dataset.id
 
+    this.setData({
+      showSelectZone: false
+    })
     tt.navigateTo({
       url: `/pages/xzks/xzks?id=${id}`
     })

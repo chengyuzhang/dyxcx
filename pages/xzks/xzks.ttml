@@ -1,16 +1,16 @@
 <view class="xzks-container">
-    <image src="../../assets/imgs/example.png"></image>
+    <image src="{{picture}}"></image>
     <view class="introduce">
         <view class="l">
-            <view class="h5">东城妇幼保健院(南区)</view>
-            <view class="p">北京市东城区法华南里25号楼</view>
-            <view>
+            <view class="h5">{{name}}</view>
+            <view class="p">{{address}}</view>
+            <!-- <view>
                 <text class="span">7:30</text>
                 <text class="i">放第15天号</text>
-            </view>
+            </view> -->
         </view>
         <view class="r">
-            <image src="../../assets/imgs/select-bg.png"></image>
+            <image src="../../assets/imgs/select-bg.png" bindtap="showSelectZoneFn"></image>
         </view>
     </view>
     <view class="side-tab">
@@ -19,6 +19,21 @@
         </view>
         <view class="ul" style="height:{{iH}}px;">
             <view class="li" tt:for={{childrenList}} bindtap="toPage">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="select-zone" tt:if="{{showSelectZone}}">
+        <view class="con">
+            <view class="h5">选择院区</view>
+            <view class="ul">
+                <view class="li" tt:for="{{areaList}}">
+                    <view class="l" data-id="{{item.id}}" bindtap="selectZone">
+                        <view class="h6">{{item.name}}</view>
+                        <view class="p">{{item.address}}</view>
+                    </view>
+                    <image src="../../assets/imgs/r.png"></image>
+                </view>
+            </view>
+            <button bindtap="showSelectZoneFn">取消</button>
         </view>
     </view>
 </view>

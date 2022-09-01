@@ -56,8 +56,13 @@ Page({
         title: 76575
       }
     ],
+    showSelectZone: false,
     childrenList: [],
     areaList: [],
+    picture: '',
+    name: '',
+    address: ''
+
   },
   onLoad: function (options) {
     this.setData({
@@ -67,6 +72,18 @@ Page({
     this.getOfficeTree()
     this.getAreaList()
   },
+  showSelectZoneFn(){
+    this.setData({
+      showSelectZone: true
+    })
+  },
+  selectZone(ev){
+    let id = ev.currentTarget.dataset.id
+
+    tt.redirectTo({
+      url: `/pages/xzks/xzks?id=${id}`
+    })
+  },
   getAreaList(){
     areaAbout.getAreaList({
 
@@ -75,13 +92,14 @@ Page({
       this.setData({
         areaList: res.data
       })
+      this.getAreaInfo()
     }).catch(err => {
       console.log('getAreaList-err', err)
     })
   },
   getAreaInfo(){
     let area = this.data.areaList.filter((item, index) => {
-      return item.id == this.id
+      return item.id == this.data.id
     })
     console.log('area', area)
     this.setData({
@@ -89,6 +107,8 @@ Page({
       address: area[0].address,
       picture: area[0].picture
     })
+
+    console.log(this.data.picture)
   },
   getOfficeTree(){
     officeAbout.getOfficeTree({
@@ -101,6 +121,9 @@ Page({
         childrenList: res.data[0].children
       })
 
+      setTimeout(() => {
+        this.setElHeight()
+      }, 500)
       console.log('d',this.data.childrenList)
     }).catch(err => {
       console.log('getOfficeTree-err', err)
@@ -144,6 +167,5 @@ Page({
     })
   },
   onReady(){
-    this.setElHeight()
   }
 })
