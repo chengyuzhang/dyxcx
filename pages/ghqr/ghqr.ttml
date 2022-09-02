@@ -32,7 +32,7 @@
             <view class="img" tt:if="{{!jzrInfo}}" bindtap="toAddPage">
                 <image src="../../assets/imgs/add-bg.png"></image>
             </view>
-            <view class="con" tt:if="{{jzrInfo}}" bindtap="toAddPage">
+            <view class="con" tt:if="{{jzrInfo}}" bindtap="toChange">
                 <view class="l">{{jzrInfo.name}}</view>
                 <view class="m">
                     <view class="p">{{jzrInfo.feeNo}}</view>

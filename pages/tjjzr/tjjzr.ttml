@@ -15,7 +15,7 @@
         <view class="li">
             <text class="span">姓名</text>
             <view class="r">
-                <input value="{{xmVal}}" placeholder="请输入就诊人真实姓名" />
+                <input value="{{xmVal}}" bindinput="getXm" placeholder="请输入就诊人真实姓名" />
             </view>
         </view>
         <view class="li">
@@ -33,7 +33,7 @@
         <view class="li">
             <text class="span">证件号码</text>
             <view class="r">
-                <input value="{{zjhmVal}}" placeholder="请输入证件号码" />
+                <input value="{{zjhmVal}}" bindinput="getZjhm" placeholder="请输入证件号码" />
             </view>
         </view>
         <view class="li">
@@ -95,20 +95,20 @@
         <view class="li">
             <text class="span">医保卡号</text>
             <view class="r">
-                <input value="{{ybkhVal}}" placeholder="请输入医保卡号" />
+                <input value="{{ybkhVal}}" bindinput="getYbkh" placeholder="请输入医保卡号" />
                 <image src="../../assets/imgs/scan.png"></image>
             </view>
         </view>
         <view class="li">
             <text class="span">手机号</text>
             <view class="r">
-                <input value="{{sjhVal}}" placeholder="请输入就诊人手机号码" />
+                <input value="{{sjhVal}}" bindinput="getSjh" placeholder="请输入就诊人手机号码" />
             </view>
         </view>
         <view class="li code">
             <text class="span">验证码</text>
             <view class="r">
-                <input value="{{yzmVal}}" placeholder="请输入验证码" />
+                <input value="{{yzmVal}}" bindinput="getYzm" placeholder="请输入验证码" />
                 <text class="i" tt:if="{{!iBtn}}">{{numStr}}s</text>
                 <button tt:if="{{iBtn}}" bindtap="getCode">获取验证码</button>
             </view>

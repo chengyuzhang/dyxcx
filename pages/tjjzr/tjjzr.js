@@ -1,4 +1,7 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/tjjzr/tjjzr.js
+import { patientAbout, tool } from '../../request/api.js'
+const util= require('../../util/util.js')
+
 Page({
   data: {
     relationIndex: 0,
@@ -77,11 +80,31 @@ Page({
       "珞巴族",
       "基诺族"
     ],
-    numStr: 10,
+    numStr: 60,
     iBtn: true
   },
   onLoad: function (options) {
 
+  },
+  smsCode(){
+    tool.smsCode({
+      phone: this.data.sjhVal
+    }).then(res => {
+      console.log('smsCode-res', res)
+      tt.showToast({
+        title: "验证码已发送！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+    }).catch(err => {
+      console.log('smsCode-err', err)
+    })
   },
   pickerRelation(ev){
     let idx = Number(ev.detail.value)
@@ -119,6 +142,22 @@ Page({
     })
   },
   getCode(){
+    console.log('this.data.sjhVal', this.data.sjhVal)
+    if(!util.checkPhone(this.data.sjhVal)){
+      tt.showToast({
+        title: "请输入正确手机号！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+
     if(!this.data.iBtn) return
     this.setData({
       iBtn: false
@@ -141,5 +180,31 @@ Page({
         clearInterval(timer)
       }
     }, 1000)
-  }
+    this.smsCode()
+  },
+  getSjh(e){
+    this.setData({
+      sjhVal: e.detail.value
+    })
+  },
+  getXm(e){
+    this.setData({
+      xmVal: e.detail.value
+    })
+  },
+  getZjhm(e){
+    this.setData({
+      zjhmVal: e.detail.value
+    })
+  },
+  getYbkh(e){
+    this.setData({
+      ybkhVal: e.detail.value
+    })
+  },
+  getYzm(e){
+    this.setData({
+      yzmVal: e.detail.value
+    })
+  },
 })
