@@ -40,7 +40,9 @@ export const api = {
         })	
     },
     async post(url, data = {}, header = {}){
-        header = Object.assign({}, header)
+        let token = tt.getStorageSync('token')
+        header = Object.assign({token}, header)
+		header = Object.assign({hospitalId: 1}, header)
         requestCount ++
         tt.showLoading({
             title: '请求中'

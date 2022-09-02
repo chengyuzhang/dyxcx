@@ -4,23 +4,37 @@ const util= require('../../util/util.js')
 
 Page({
   data: {
-    relationIndex: 0,
-    cardIndex: 0,
-    dateIndex: 0,
-    nationIndex: 0,
-    sexIndex: 0,
-    typeIndex: 0,
-    gxVal: '',
-    xmVal: '',
-    zjlxVal: '',
-    zjhmVal: '',
-    mzVal: '',
-    srVal: '',
-    ybkhVal: '',
-    sjhVal: '',
-    yzmVal: '',
-    cardTypeList: ['身份证'],
-    relationList: ['本人','配偶','子女','父亲','母亲','其他亲属',],
+    showCardType: false,
+    cardTypeList: [{
+      name: '身份证',
+      id: 1
+    }],
+    relationList: [
+      {
+        name: '本人',
+        id: 1
+      },
+      {
+        name: '配偶',
+        id: 2
+      },
+      {
+        name: '子女',
+        id: 3
+      },
+      {
+        name: '父亲',
+        id: 4
+      },
+      {
+        name: '母亲',
+        id: 5
+      },
+      {
+        name: '其他亲属',
+        id: 6
+      },
+    ],
     showRelation: false,
     nationList: [
       "汉族",
@@ -80,11 +94,216 @@ Page({
       "珞巴族",
       "基诺族"
     ],
+    showNation: false,
+    minDate: new Date(1950, 0, 1),
+    maxDate: new Date(),
+    currentDate: new Date(),
+    showDate: false,
+    sexIndex: '',
+    typeIndex: '',
+    gxId: '',
+    gxVal: '',
+    xmVal: '',
+    zjlxVal: '',
+    zjlxId: '',
+    zjhmVal: '',
+    mzVal: '',
+    srVal: '',
+    ybkhVal: '',
+    sjhVal: '',
+    yzmVal: '',
+    srFormat: '',
     numStr: 60,
-    iBtn: true
+    iBtn: true,
   },
   onLoad: function (options) {
 
+  },
+  
+  addPatient(){
+    if(!this.data.gxId){
+      tt.showToast({
+        title: "请选择就诊人与本人关系！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.xmVal){
+      tt.showToast({
+        title: "请输入姓名！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.zjlxId){
+      tt.showToast({
+        title: "请选择证件类型！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.zjhmVal){
+      tt.showToast({
+        title: "请输入证件号码！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.sexIndex){
+      tt.showToast({
+        title: "请选择性别！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.mzVal){
+      tt.showToast({
+        title: "请选择民族！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.srVal){
+      tt.showToast({
+        title: "请选择生日！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.typeIndex){
+      tt.showToast({
+        title: "请选择费别！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.ybkhVal){
+      tt.showToast({
+        title: "请输入医保卡号！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.sjhVal){
+      tt.showToast({
+        title: "请输入正确手机号！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+    if(!this.data.yzmVal){
+      tt.showToast({
+        title: "请输入验证码！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+
+    patientAbout.addPatient({
+      birthday: this.data.srVal,
+      feeNo: this.data.ybkhVal,
+      feeType: this.data.typeIndex,
+      idNo: this.data.zjhmVal,
+      idType: this.data.zjlxId,
+      name: this.data.xmVal,
+      nationality: this.data.mzVal,
+      phone: this.data.sjhVal,
+      relation: this.data.gxId,
+      sex: this.data.sexIndex,
+      validCode: this.data.yzmVal,
+    }).then(res => {
+      console.log('addPatient-res', res)
+      tt.showToast({
+        title: "添加就诊人成功",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+    }).catch(err => {
+      console.log('addPatient-err', err)
+    })
   },
   smsCode(){
     tool.smsCode({
@@ -109,13 +328,15 @@ Page({
   pickerRelation(ev){
     let idx = Number(ev.detail.value)
     this.setData({
-      gxVal: this.data.relationList[idx]
+      gxVal: this.data.relationList[idx].name,
+      gxId: this.data.relationList[idx].id
     })  
   },
   pickerCardType(ev){
     let idx = Number(ev.detail.value)
     this.setData({
-      zjlxVal: this.data.cardTypeList[idx]
+      zjlxVal: this.data.cardTypeList[idx].name,
+      zjlxId: this.data.cardTypeList[idx].id
     })  
   },
   pickerNation(ev){
@@ -125,6 +346,7 @@ Page({
     })  
   },
   datePickerChange(ev){
+    console.log(ev.detail.value)
     this.setData({
       srVal: ev.detail.value
     })
