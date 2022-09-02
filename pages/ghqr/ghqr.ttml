@@ -2,23 +2,43 @@
     <view class="con">
         <view class="h6">挂号信息</view>
         <view class="ul">
-            <view class="li" tt:for="{{5}}">
+            <view class="li">
                 <text class="span">挂号信息</text>
-                <text class="p">2022-10-10 周一</text>
+                <text class="p">{{clinicDate}}</text>
+            </view>
+            <view class="li">
+                <text class="span">就诊时间</text>
+                <text class="p">{{startTime}}-{{endTime}}</text>
+            </view>
+            <view class="li">
+                <text class="span">就诊医院</text>
+                <text class="p">{{areaName}}</text>
+            </view>
+            <view class="li">
+                <text class="span">就诊科室</text>
+                <text class="p">{{officeName}}</text>
+            </view>
+            <view class="li">
+                <text class="span">医生名称</text>
+                <text class="p">{{clinicName}}</text>
+            </view>
+            <view class="li">
+                <text class="span">医生专长</text>
+                <text class="p">{{skill}}</text>
             </view>
         </view>
         <view class="h6" style="margin-top:48rpx;">就诊人信息</view>
         <view class="add">
-            <view class="img" tt:if="{{false}}" bindtap="toAddPage">
+            <view class="img" tt:if="{{!jzrInfo}}" bindtap="toAddPage">
                 <image src="../../assets/imgs/add-bg.png"></image>
             </view>
-            <view class="con" tt:if="{{true}}" bindtap="toAddPage">
-                <view class="l">星星</view>
+            <view class="con" tt:if="{{jzrInfo}}" bindtap="toAddPage">
+                <view class="l">{{jzrInfo.name}}</view>
                 <view class="m">
-                    <view class="p">1578 944 9888</view>
+                    <view class="p">{{jzrInfo.feeNo}}</view>
                     <view class="p">
-                        <text class="i">北京社保卡</text>
-                        <text class="span">医保报销</text>
+                        <text tt:if="{{jzrInfo.feeType == 1}}" class="span zf">自费</text>
+                        <text tt:else class="span ybbx">医保报销</text>
                     </view>
                 </view>
                 <view class="b">

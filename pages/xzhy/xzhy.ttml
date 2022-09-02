@@ -113,10 +113,10 @@
         <view class="con">
             <view class="h6">选择就诊时间</view>
             <view class="ul">
-                <view class="li" tt:for="{{timeList}}" data-idx="{{index}}" bindtap="getTimeZone">
+                <view class="li" tt:for="{{timeList}}" data-idx="{{index}}" data-obj="{{item}}" bindtap="getTimeZone">
                     <image tt:if="{{timeIndex != index}}" src="../../assets/imgs/space.png"></image>
                     <image tt:if="{{timeIndex == index}}" src="../../assets/imgs/dot.png"></image>
-                    <text class="p">{{item.time}}</text>
+                    <text class="p">{{item.startTime}}-{{item.endTime}}</text>
                 </view>
             </view>
             <button bindtap="timeShowFn">取消</button>

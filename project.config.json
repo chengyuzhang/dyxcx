@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": -1,
+      "current": 1659578807502,
       "list": [
         {
           "id": 1659511353198,
@@ -35,7 +35,7 @@
           "id": 1659578807502,
           "name": "挂号确认",
           "pathName": "pages/ghqr/ghqr",
-          "query": "",
+          "query": "id=1",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"
@@ -206,6 +206,15 @@
           "id": 1661995116317,
           "name": "医院动态",
           "pathName": "pages/yydt/yydt",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1662101438596,
+          "name": "挂号须知",
+          "pathName": "pages/ghxz/ghxz",
           "query": "",
           "scene": "990001",
           "launchFrom": "scan",

@@ -130,9 +130,20 @@ Page({
     this.setData({
       showSelectZone: false
     })
-    tt.navigateTo({
-      url: `/pages/xzks/xzks?id=${id}`
-    })
+    
+    if(this.data.isHs){
+      tt.navigateTo({
+        url: `/pages/xzhy-hs/xzhy-hs?id=${id}`
+      })
+
+      this.setData({
+        isHs: false
+      })
+    }else{
+      tt.navigateTo({
+        url: `/pages/xzks/xzks?id=${id}`
+      })
+    }
   },
   toJcjgPage(){
     tt.navigateTo({

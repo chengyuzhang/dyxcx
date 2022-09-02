@@ -10,7 +10,7 @@ Page({
     areaAddress: '',
     areaName: '',
     officeName: '',
-    officeId: 1,
+    officeId: 0,
     showCalendar: false,
     remainTime: 0,
     targetDay: '',
@@ -22,7 +22,7 @@ Page({
     daysNum: 0,
     weekDay: 0,
     timeShow: false,
-    timeIndex: 999,
+    timeIndex: 0,
     date: '',
     tabIndex: 0,
     tabStatus: 1,
@@ -33,10 +33,10 @@ Page({
   },
   onLoad: async function (options) {
     this.setData({
-      officeId: options.id
+      id: options.id
     })
 
-    await this.getDutyDate()
+    await this.getDutyDateHs()
     this.formatOrderDate()
   },
   formatOrderDate(){
@@ -143,11 +143,11 @@ Page({
       console.log('getOfficeDutyTimes-err', err)
     })
   },
-  async getDutyDate(){
-    await officeAbout.getDutyDate({
-      officeId: this.data.officeId
+  async getDutyDateHs(){
+    await officeAbout.getDutyDateHs({
+      areaId: this.data.id
     }).then(res => {
-      console.log('getDutyDate-res', res)
+      console.log('getDutyDateHs-res', res)
       
       let dateList = res.data.ddList.map((item, index) => {
         item.title = util.formatDay(item.date)
@@ -160,11 +160,12 @@ Page({
         areaAddress: res.data.areaAddress,
         areaName: res.data.areaName,
         officeName: res.data.officeName,
+        officeId: res.data.officeId,
         dateList
       })
 
     }).catch(err => {
-      console.log('getDutyDate-err', err)
+      console.log('getDutyDateHs-err', err)
     })
   },
   changeTab(ev){
@@ -191,6 +192,7 @@ Page({
     this.officeDutyDay()
   },
   officeDutyDay(){
+    console.log('this.data.officeId', this.data.officeId)
     officeAbout.officeDutyDay({
       officeId: this.data.officeId,
       clinicDate: this.data.clinicDate
@@ -238,13 +240,13 @@ Page({
   },
   getTimeZone(ev){
     let idx = ev.currentTarget.dataset.idx
-    let obj = ev.currentTarget.dataset.obj
+    console.log(idx)
     this.setData({
       timeIndex: idx
     })
-    tt.navigateTo({
-      url: `/pages/ghqr/ghqr?id=${obj.id}`
-    })
+    // tt.navigateTo({
+    //   url: `/pages/ghqr/ghqr`
+    // })
   },
   timeShowFn(){
     this.setData(

@@ -1,0 +1,10 @@
+<view class="ghxz-container">
+    <view class="h5">{{data.title}}</view>
+    <view class="h6">{{data.createTime}}</view>
+    <view class="con">
+        <rich-text
+            nodes="{{data.content}}"
+        >
+        </rich-text>
+    </view>
+</view>
