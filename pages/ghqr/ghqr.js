@@ -77,7 +77,7 @@ Page({
   },
   toChange(){
     tt.redirectTo({
-      url: `/pages/jzr-list/jzr-list?id=${this.data.id}`
+      url: `/pages/jzrlist/jzrlist?id=${this.data.id}`
     })
   },
   toPage(){

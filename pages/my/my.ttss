@@ -136,9 +136,6 @@
 	line-height: 32rpx;
 }
 
-
-.my-container .three {}
-
 .my-container .three .h6 {
 	margin-top: 32rpx;
 	margin-bottom: 16rpx;

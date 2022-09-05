@@ -69,7 +69,7 @@
     line-height: 40rpx;
 }
 .ghqr-container >.con .add .con .m{
-    margin-right: 136rpx;
+    width: 328rpx;
 }
 .ghqr-container >.con .add .con .m .p{
     font-size: 28rpx;

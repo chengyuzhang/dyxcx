@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": 1659680152692,
+      "current": 1659578807502,
       "list": [
         {
           "id": 1659511353198,
@@ -216,6 +216,15 @@
           "name": "挂号须知",
           "pathName": "pages/ghxz/ghxz",
           "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1662356934490,
+          "name": "就诊人列表",
+          "pathName": "pages/jzrlist/jzrlist",
+          "query": "id=1",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"
