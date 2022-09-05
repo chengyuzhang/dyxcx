@@ -1,10 +1,54 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/yyjl/yyjl.js
+import { appointAbout, patientAbout } from '../../request/api.js'
+
 Page({
   data: {
-
+    loading: false,
+    finished: false,
+    activeIndex: 0,
+    showList: false,
+    showDialog: false,
+    patientId: '',
+    jzrList: [],
+    appointList: [],
+    pageNo: 1,
+    pageSize: 5,
+    jzrInfo: null
   },
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    await this.getLastAppointPatient()
+    this.getPatientList()
+  },
+  async getLastAppointPatient(){
+    await patientAbout.getLastAppointPatient({
+    }).then(res => {
+      console.log('getLastAppointPatient-res', res)
+      if(res.data){
+        this.setData({
+          jzrInfo: res.data
+        })
+      }
+    }).catch(err => {
+      console.log('getLastAppointPatient-err', err)
+    })
+  },
+  getPatientList(){
+    patientAbout.getPatientList({
+    }).then(res => {
+      console.log('getPatientList-res', res)
+      this.setData({
+        jzrList: res.data
+      })
+      this.data.jzrList.forEach((item, index) => {
+        if(item.name == this.data.jzrInfo.name){
+          this.setData({
+            activeIndex: index
+          })
+        }
+      })
+    }).catch(err => {
+      console.log('getPatientList-err', err)
+    })
   },
   toPage(ev){
     console.log('ev', ev)
@@ -12,7 +56,14 @@ Page({
       url: '/pages/yyjlxq/yyjlxq'
     })
   },
+  showListFn(){
+    console.log(111)
+    this.setData({
+      showList: true
+    })
 
+    console.log('this.data.showList', this.data.showList)
+  },
   cancelOrder(ev){
     let idx = ev.currentTarget.dataset.idx
     
