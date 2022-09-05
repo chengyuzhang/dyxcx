@@ -111,22 +111,31 @@
 	height: 84rpx;
 }
 
-.my-container .two .con .ul .li.active .div image.img2 {
+.my-container .two .con .ul .li.active .div >.p {
+	position: absolute;
 	left: 50%;
 	bottom: 0;
+	z-index: 2;
 	transform: translateX(-50%);
-	width: 54rpx;
-	height: 26rpx;
+	width: 60rpx;
+	padding: 2rpx 0;
+	font-size: 20rpx;
+	text-align: center;
+	background: #DBD3FA;
+	color: #B47DE2;
+	border-radius: 14rpx;
 }
 
-.my-container .two .con .ul .li.active .p {
+.my-container .two .con .ul .li.active >.p {
 	display: block;
 	margin-top: 6rpx;
+	width: 1005;
 	text-align: center;
 	font-size: 22rpx;
 	color: #000;
 	line-height: 32rpx;
 }
+
 
 .my-container .three {}
 

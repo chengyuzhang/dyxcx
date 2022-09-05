@@ -1,7 +1,7 @@
 <view class="my-container">
 	<view class="one">
-		<image src="../../assets/imgs/people.png"></image>
-		<text class="p">登录/注册</text>
+		<image src="{{headImgurl}}"></image>
+		<text class="p">{{nickName}}</text>
 	</view>
 	<view class="two">
 		<view class="top">
@@ -16,13 +16,15 @@
 		</view>
 		<view class="con">
 			<view class="ul">
-				<view class="li {{item.name ? 'active' : ''}}" tt:for="{{peopleList}}">
+				<view class="li {{item.name ? 'active' : ''}}" tt:if="{{index < 5}}" tt:for="{{peopleList}}" data-obj="{{item}}" bindtap="toCodePage">
 					<view class="div" tt:if="{{item.name}}">
 						<image class="img1" src="../../assets/imgs/people.png"></image>
-						<image class="img2" src="../../assets/imgs/self.png"></image>
+						<text class="p">{{item.relationName}}</text>
 					</view>
-					<image tt:else src="../../assets/imgs/add.png" bindtap="toAddPage"></image>
-					<text class="p" tt:if="{{item.name}}">星星</text>
+					<text class="p" tt:if="{{item.name}}">{{item.name}}</text>
+				</view>
+				<view class="li" tt:if="{{peopleList.length < 5}}" bindtap="toAddPage">
+					<image class="img1" src="../../assets/imgs/add.png"></image>
 				</view>
 			</view>
 		</view>

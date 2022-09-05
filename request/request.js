@@ -55,16 +55,18 @@ export const api = {
                 header,
                 method: 'POST',
                 success(res){
+                    console.log('resss', res)
                     requestCount -- 
                     if (!requestCount) {
                         wx.hideLoading()
                     }
-
-                    if(res.statusCode == 200){
-                        resolve(res.data.body)
+                    if(res.data.code == 200){
+                        resolve(res.data)
                     }
                 },
-                fail(){
+                fail(err){
+                    console.log('errrr', err)
+
                     requestCount -- 
                     if (!requestCount) {
                         wx.hideLoading()
