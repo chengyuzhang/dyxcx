@@ -18,6 +18,68 @@ Page({
   onLoad: async function (options) {
     await this.getLastAppointPatient()
     this.getPatientList()
+    this.getAppointList()
+  },
+  getAppointList(){
+    this.setData({
+      loading: true
+    })
+    appointAbout.getAppointList({
+      patientId: this.data.jzrInfo.id,
+      pageNo: this.data.pageNo,
+      pageSize: this.data.pageSize,
+    }).then(res => {
+      console.log('getAppointList-res', res)
+
+      let list = res.data.map((item, index) => {
+        let status = item.tradeStatus
+
+        if(status == 1){
+          item.statusStr = '预约成功'
+        }
+        if(status == 2){
+          item.statusStr = '已取消'
+        }
+        return item
+      })
+
+      if(list.length < this.data.pageSize){
+        this.setData({
+          finished: true
+        })
+      }
+      this.setData({
+        appointList: this.data.appointList.concat(list)
+      })
+
+      this.setData({
+        loading: false,
+        pageNo: ++ this.data.pageNo
+      })
+
+    }).catch(err => {
+      console.log('getAppointList-err', err)
+    })
+  },
+  lower(){
+    console.log(this.data.loading)
+    console.log(this.data.finished)
+    if(this.data.loading || this.data.finished) return
+    this.getAppointList()
+  },
+  getItem(ev){
+    let idx = ev.currentTarget.dataset.idx
+    
+    this.setData({
+      activeIndex: idx,
+      showList: false,
+      jzrInfo: this.data.jzrList[idx],
+      appointList: [],
+      finished: false,
+      loading: false,
+      pageNo: 1
+    })
+    this.getAppointList()
   },
   async getLastAppointPatient(){
     await patientAbout.getLastAppointPatient({
@@ -51,13 +113,16 @@ Page({
     })
   },
   toPage(ev){
-    console.log('ev', ev)
     tt.navigateTo({
       url: '/pages/yyjlxq/yyjlxq'
     })
   },
+  toXzhyPage(){
+    tt.redirectTo({
+      url: '/pages/index/index'
+    })
+  },
   showListFn(){
-    console.log(111)
     this.setData({
       showList: true
     })
