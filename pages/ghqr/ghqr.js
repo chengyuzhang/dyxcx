@@ -28,6 +28,19 @@ Page({
 			this.getLastAppointPatient()
 		}
   },
+  saveAppoint(){
+    appointAbout.saveAppoint({
+      dutyTimeId: this.id,
+      patientId: this.jzrInfo.id
+    }).then(res => {
+      console.log('saveAppoint-res', res)
+      tt.navigateTo({
+        url: `/pages/ghcg/ghcg?id=${res.data.id}`
+      })
+    }).catch(err => {
+      console.log('saveAppoint-err', err)
+    })
+  },
   async getLastAppointPatient(){
     await patientAbout.getLastAppointPatient({
     }).then(res => {

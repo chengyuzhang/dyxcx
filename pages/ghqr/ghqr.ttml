@@ -53,6 +53,6 @@
         </view>
     </view>
     <view class="btn">
-        <button bindtap="toSuccessPage">确认</button>
+        <button bindtap="saveAppoint">确认</button>
     </view>
 </view>

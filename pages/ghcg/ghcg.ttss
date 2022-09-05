@@ -1,0 +1,75 @@
+.ghqr-container{
+    width: 100%;
+    height: 100%;
+    padding-top: 30rpx;
+    background: #F8F8F8;
+}
+.ghqr-container .con{
+    margin: 0 auto;
+    width: 690rpx;
+    padding: 30rpx;
+    padding-top: 18rpx;
+    padding-bottom: 50rpx;
+    background: #fff;
+}
+.ghqr-container .con .top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ghqr-container .con .top image{
+    margin-top: 66rpx;
+    margin-bottom: 36rpx;
+    width: 108rpx;
+    height: 108rpx;
+}
+.ghqr-container .con .top .h5{
+    margin-bottom: 66rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #000;
+    line-height: 50rpx;
+}
+.ghqr-container .con .ul .li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24rpx;
+}
+.ghqr-container .con .ul .li .span{
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #888;
+}
+.ghqr-container .con .ul .li .p{
+    width: 400rpx;
+    text-align: right;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.ghqr-container .con .btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60rpx;
+}
+.ghqr-container .con .btns button{
+    width: 240rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    color: #999;
+    font-size: 28rpx;
+    border: 1px solid #aaa;
+    border-radius: 36rpx;
+}
+.ghqr-container .con .btns button.first{
+    margin-right: 32rpx;
+}
+
