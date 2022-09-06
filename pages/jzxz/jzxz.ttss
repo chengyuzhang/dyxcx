@@ -1,0 +1,22 @@
+.jzxz-container{}
+.jzxz-container .ul{
+    padding: 0 30rpx;
+    background: #fff;
+}
+.jzxz-container .ul .li{
+    padding: 30rpx 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.jzxz-container .ul .li .h5{
+    display: block;
+    margin-bottom: 16rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    color: #000
+}
+.jzxz-container .ul .li .p{
+    display: block;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #888;
+}

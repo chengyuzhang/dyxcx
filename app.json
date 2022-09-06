@@ -23,11 +23,13 @@
         "pages/jzrgl/jzrgl",
         "pages/jzrlist/jzrlist",
         "pages/jzm/jzm",
+        "pages/jzxz/jzxz",
         "pages/tjbg/tjbg",
         "pages/jzjl/jzjl",
         "pages/jzjlxq/jzjlxq",
         "pages/yyjl/yyjl",
-        "pages/yyjlxq/yyjlxq"
+        "pages/yyjlxq/yyjlxq",
+        "pages/ghlc/ghlc"
     ],
     "window": {
         "backgroundTextStyle": "light",

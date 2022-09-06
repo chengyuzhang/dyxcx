@@ -1,0 +1,8 @@
+<view class="jzxz-container">
+    <view class="ul">
+        <view class="li" tt:for="{{jzxzList}}" data-id="{{item.id}}" bindtap="toPage">
+            <text class="h5">{{item.title}}</text>
+            <text class="p">{{item.intro}}</text>
+        </view>
+    </view>
+</view>

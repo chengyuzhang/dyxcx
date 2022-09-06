@@ -237,6 +237,24 @@
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"
+        },
+        {
+          "id": 1662434325297,
+          "name": "就诊须知",
+          "pathName": "pages/jzxz/jzxz",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1662444469761,
+          "name": "挂号流程",
+          "pathName": "pages/ghlc/ghlc",
+          "query": "id=1",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
         }
       ]
     }

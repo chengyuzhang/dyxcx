@@ -23,7 +23,7 @@ Page({
   },
   async getDoctorDuty(){
     await doctotAbout.getDoctorDuty({
-      id: this.id
+      id: this.data.id
     }).then(res => {
       console.log('getDoctorDuty-res', res)
 
