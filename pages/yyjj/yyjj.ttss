@@ -71,7 +71,7 @@
 
 .yyjj-container .tab .ul .li {}
 
-.yyjj-container .tab .ul .li .p {
+.yyjj-container .tab .ul .li p {
 	display: block;
 	margin-bottom: 50rpx;
 	font-size: 28rpx;
