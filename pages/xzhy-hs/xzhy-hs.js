@@ -240,13 +240,13 @@ Page({
   },
   getTimeZone(ev){
     let idx = ev.currentTarget.dataset.idx
-    console.log(idx)
+    let obj = ev.currentTarget.dataset.obj
     this.setData({
       timeIndex: idx
     })
-    // tt.navigateTo({
-    //   url: `/pages/ghqr/ghqr`
-    // })
+    tt.navigateTo({
+      url: `/pages/ghqr/ghqr?id=${obj.id}`
+    })
   },
   timeShowFn(){
     this.setData(

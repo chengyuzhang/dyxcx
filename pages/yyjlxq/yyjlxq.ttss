@@ -133,7 +133,7 @@
 
 .yyjlxq-container .none button {
 	margin-top: 68rpx;
-	width: 55prpx;
+	width: 550rpx;
 	height: 84rpx;
 	line-height: 84rpx;
 	font-size: 28rpx;

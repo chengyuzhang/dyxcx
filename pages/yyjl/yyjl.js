@@ -62,8 +62,6 @@ Page({
     })
   },
   lower(){
-    console.log(this.data.loading)
-    console.log(this.data.finished)
     if(this.data.loading || this.data.finished) return
     this.getAppointList()
   },
@@ -113,8 +111,9 @@ Page({
     })
   },
   toPage(ev){
+    let id = ev.currentTarget.dataset.id
     tt.navigateTo({
-      url: '/pages/yyjlxq/yyjlxq'
+      url: `/pages/yyjlxq/yyjlxq?id=${id}`
     })
   },
   toXzhyPage(){
@@ -129,16 +128,39 @@ Page({
 
     console.log('this.data.showList', this.data.showList)
   },
+  cancelAppoint(obj){
+    appointAbout.cancelAppoint({
+      id: obj.id
+    }).then(res => {
+      console.log('cancelAppoint-res', res)
+    
+      this.setData({
+        appointList: [],
+        finished: false,
+        loading: false,
+        pageNo: 1
+      })
+
+      this.getAppointList()
+    }).catch(err => {
+      console.log('cancelAppoint-err', err)
+    })
+  },
   cancelOrder(ev){
     let idx = ev.currentTarget.dataset.idx
-    
+    let obj = ev.currentTarget.dataset.obj
+    let _this = this
+
     tt.showModal({
       title: '确认要取消预约？',
-      content: '您正在取消“儿内科主任医师”的预约 ',
+      content: `您正在取消“${obj.officeName}${obj.clinicName}”的预约`,
       cancelText: '不取消',
       confirmText: '取消预约',
       confirmColor: '#576B95',
       success(res) {
+        if(res.confirm){
+          _this.cancelAppoint(obj)
+        }
         console.log("用户点击了" + (res.confirm ? "确定" : "取消"));
       },
       fail(err) {

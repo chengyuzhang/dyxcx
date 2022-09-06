@@ -7,7 +7,7 @@
 		<view class="top">
 			<view class="l">
 				<text class="p">就诊人</text>
-				<text class="i">(1/5)</text>
+				<text class="i">({{peopleList.length <= 5 ? peopleList.length : 5}}/5)</text>
 			</view>
 			<view class="r" bindtap="toJzrglPage">
 				<text class="p">就诊管理人</text>

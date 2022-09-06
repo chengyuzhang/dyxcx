@@ -24,7 +24,7 @@
 		</view>
 	</view>
 	<scroll-view tt:if="{{appointList.length}}" class="ul" bindscroll="scroll" bindscrolltolower="lower" lower-threshold="{{50}}" scroll-y="{{true}}">
-		<view class="li1" tt:for="{{appointList}}" bindtap="toPage">
+		<view class="li1" tt:for="{{appointList}}" data-id="{{item.id}}" bindtap="toPage">
 			<view class="top">
 				<view class="l">
 					<text class="h6">{{item.clinicName}}</text>
@@ -50,7 +50,7 @@
 					<text class="i">{{item.prePrice}}</text>
 				</view>
 			</view>
-			<button catchtap="cancelOrder">取消预约</button>
+			<button tt:if="{{item.statusStr == '预约成功'}}" data-obj="{{item}}" catchtap="cancelOrder">取消预约</button>
 		</view>
 	</scroll-view>
 	<view class="none">

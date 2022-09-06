@@ -48,6 +48,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 15rpx;
+  background: none;
 }
 .ul.items .li{
   width: 180rpx;

@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": 1659754792870,
+      "current": -1,
       "list": [
         {
           "id": 1659511353198,
@@ -197,7 +197,7 @@
           "id": 1659759419759,
           "name": "预约记录详情",
           "pathName": "pages/yyjlxq/yyjlxq",
-          "query": "",
+          "query": "id=21",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"

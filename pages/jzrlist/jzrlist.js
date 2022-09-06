@@ -18,7 +18,7 @@ Page({
     tt.setStorageSync('jzrInfo', JSON.stringify(obj))
     
     tt.redirectTo({
-      url: `/pages/ghqr/ghqr?id=${this.id}`
+      url: `/pages/ghqr/ghqr?id=${this.data.id}`
     })
   },
   getPatientList(){
