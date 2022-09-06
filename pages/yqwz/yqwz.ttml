@@ -1,2 +1,16 @@
-<!-- /Users/zhangchengyu/Workstation/dyxcx/pages/yqwz/yqwz.ttml -->
-<text>/Users/zhangchengyu/Workstation/dyxcx/pages/yqwz/yqwz.ttml</text>
+<view class="yqwz-container">
+    <view class="ul">
+        <view class="li" tt:for="{{areaList}}">
+            <view class="top">
+                <view class="l">
+                    <text class="h5">东城妇幼保健院({{item.shortName}})</text>
+                    <text class="p">院区地址：{{item.address}}</text>
+                    <text class="p">联系电话：{{item.contact}}</text>
+                </view>
+                <button data-obj="{{item}}" bindtap="toNav">导航</button>
+            </view>
+            <image src="{{item.picture}}"></image>
+        </view>
+    </view>
+    <map id="myMap" style="width: 0; height: 0;"></map>
+</view>

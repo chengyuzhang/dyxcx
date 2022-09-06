@@ -67,8 +67,8 @@
         <view class="con">
             <view class="h5">选择院区</view>
             <view class="ul">
-                <view class="li" tt:for="{{areaList}}">
-                    <view class="l" data-id="{{item.id}}" bindtap="selectZone">
+                <view class="li" tt:for="{{areaList}}" data-id="{{item.id}}" bindtap="selectZone">
+                    <view class="l">
                         <view class="h6">{{item.name}}</view>
                         <view class="p">{{item.address}}</view>
                     </view>

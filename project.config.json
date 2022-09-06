@@ -7,7 +7,7 @@
     "newFeature": true,
     "autoCompile": true
   },
-  "appid": "tt720d04b0ed3364cb01",
+  "appid": "testAppId",
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
@@ -252,6 +252,15 @@
           "name": "挂号流程",
           "pathName": "pages/ghlc/ghlc",
           "query": "id=1",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1662454486759,
+          "name": "院区位置",
+          "pathName": "pages/yqwz/yqwz",
+          "query": "",
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"
