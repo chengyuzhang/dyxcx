@@ -53,9 +53,10 @@ Page({
     })
   },
   toPage(){
-    tt.redirectTo({
-      url: '/pages/index/index'
-    });
+    tt.navigateBack()
+    // tt.redirectTo({
+    //   url: '/pages/index/index'
+    // })
   },
   toDoctorList(){
     tt.navigateTo({
