@@ -264,6 +264,15 @@
           "scene": "990001",
           "launchFrom": "scan",
           "location": "qr_code"
+        },
+        {
+          "id": 1668663115624,
+          "name": "专家号源",
+          "pathName": "pages/xzhy-zj/xzhy-zj",
+          "query": "officeId=80&clinicDate=2022-11-22",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
         }
       ]
     }

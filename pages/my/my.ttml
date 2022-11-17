@@ -23,7 +23,7 @@
 					</view>
 					<text class="p" tt:if="{{item.name}}">{{item.name}}</text>
 				</view>
-				<view class="li" tt:if="{{peopleList.length < 5}}" bindtap="toAddPage">
+				<view class="li" tt:if="{{peopleList.length < 5}}" tt:for="{{5 - peopleList.length}}" bindtap="toAddPage">
 					<image class="img1" src="../../assets/imgs/add.png"></image>
 				</view>
 			</view>

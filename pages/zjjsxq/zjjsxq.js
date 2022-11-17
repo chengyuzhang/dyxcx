@@ -11,7 +11,8 @@ Page({
     intro: '',
     officeName: '',
     headPic: '',
-    ksList: []
+    ksList: [],
+    officeId: ''
   },
   onLoad: function (options) {
     this.setData({
@@ -47,7 +48,8 @@ Page({
         skill: res.data.skill,
         intro: res.data.intro,
         officeName: res.data.officeName,
-        headPic: res.data.headPic
+        headPic: res.data.headPic,
+        officeId: res.data.officeId
       })
 
     }).catch(err => {
@@ -55,10 +57,12 @@ Page({
     })
   },
   toPage(ev){
-    let id = ev.currentTarget.dataset.id
+    let clinicDate = ev.currentTarget.dataset.clinicdate
+    console.log('clinicDate', clinicDate)
+    console.log('officeId', this.data.officeId)
 
     tt.redirectTo({
-      url: `/pages/xzhy/xzhy?id=${id}`
+      url: `/pages/xzhy-zj/xzhy-zj?id=${this.data.officeId}&clinicDate=${clinicDate}`
     });
   },
 })

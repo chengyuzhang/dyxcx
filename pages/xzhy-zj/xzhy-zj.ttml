@@ -1,0 +1,150 @@
+<view class="xzhy-container">
+    <view class="top">
+        <view class="h5">
+            <text class="i">{{officeName}}</text>
+            <view class="p" bindtap="toPage">
+                <text>科室介绍</text>
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="ul">
+            <view class="li">
+                <image src="../../assets/imgs/ly.png"></image>
+                <text class="p">{{areaName}}</text>
+            </view>
+            <view class="li" style="margin-right:0;">
+                <image src="../../assets/imgs/gps.png"></image>
+                <text class="p">{{areaAddress}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="tab-bar">
+        <scroll-view class="ul" scroll-x="true" scroll-left="{{scrollX}}">
+            <view class="li {{tabIndex == index ? 'active' : ''}}" tt:for={{dateList}} data-idx="{{index}}" data-obj="{{item}}" bindtap="changeTab">
+                <view class="p p1">{{item.title}}</view>
+                <view class="p p2">{{item.str}}</view>
+                <view class="has p3" tt:if="{{item.status == 2}}">有号</view>
+                <view class="none p3" tt:if="{{item.status == 1}}">无号</view>
+                <view class="full p3" tt:if="{{item.status == 3}}">约满</view>
+                <view class="ready p3" tt:if="{{item.status == 4}}">即将放号</view>
+            </view>
+        </scroll-view>
+        <view class="r" bindtap="showCalendarFn">
+            <view class="con">
+                <view class="p">全部日期</view>
+                <image src="../../assets/imgs/arrow-down2.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="tab-con has" tt:if="{{tabStatus == 2}}">
+        <view class="morning div">
+            <view class="h5">上午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{swList}}">
+                    <view class="l">
+                        <view class="h6">{{item.name}}</view>
+                        <view class="p" tt:if="{{item.skill}}">{{item.skill}}</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥{{item.prePrice}}</view>
+                        <button tt:if="{{item.remainCount == 0}}" class="full">约满</button>
+                        <button tt:else data-obj="{{item}}" bindtap="orderFn">剩余{{item.remainCount}}</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="afternoon div">
+            <view class="h5">下午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{xwList}}">
+                    <view class="l">
+                        <view class="h6">{{item.name}}</view>
+                        <view class="p" tt:if="{{item.skill}}">{{item.skill}}</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥{{item.prePrice}}</view>
+                        <button tt:if="{{item.remainCount == 0}}" class="full">约满</button>
+                        <button tt:else data-obj="{{item}}" bindtap="orderFn">剩余{{item.remainCount}}</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tab-con none" tt:if="{{tabStatus == 1}}">
+        <text>当天无号源</text>
+    </view>
+    <view class="tab-con full" tt:if="{{tabStatus == 3}}">
+        <view class="morning div">
+            <view class="h5">上午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{3}}">
+                    <view class="l">
+                        <view class="h6">儿科专家（正高）</view>
+                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥50</view>
+                        <button bindtap="timeShowFn">剩余20</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="afternoon div">
+            <view class="h5">下午号源</view>
+            <view class="ul">
+                <view class="li" tt:for="{{3}}">
+                    <view class="l">
+                        <view class="h6">儿科专家（正高）</view>
+                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                    </view>
+                    <view class="r">
+                        <view class="p">￥50</view>
+                        <button bindtap="timeShowFn">剩余20</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tab-con ready" tt:if="{{tabStatus == 4}}">
+        <text class="p">距离{{targetDay}}放号还有</text>
+        <text class="span">{{remainDay}}天{{remainHours}}时{{remainMinutes}}分{{remainSeconds}}秒</text>
+    </view>
+    <view class="selectTime" tt:if="{{timeShow}}">
+        <view class="con">
+            <view class="h6">选择就诊时间</view>
+            <view class="ul">
+                <view class="li" tt:for="{{timeList}}" data-idx="{{index}}" data-obj="{{item}}" bindtap="getTimeZone">
+                    <image tt:if="{{timeIndex != index}}" src="../../assets/imgs/space.png"></image>
+                    <image tt:if="{{timeIndex == index}}" src="../../assets/imgs/dot.png"></image>
+                    <text class="p">{{item.startTime}}-{{item.endTime}}</text>
+                </view>
+            </view>
+            <button bindtap="timeShowFn">取消</button>
+        </view>
+    </view>
+    <view class="calendar" tt:if="{{showCalendar}}" bindtap="showCalendarFn">
+        <view class="con">
+            <view class="h5">{{year}}年{{month}}月</view>
+            <view class="ol">
+                <view class="li">日</view>
+                <view class="li">一</view>
+                <view class="li">二</view>
+                <view class="li">三</view>
+                <view class="li">四</view>
+                <view class="li">五</view>
+                <view class="li">六</view>
+            </view>
+            <view class="ul">
+                <view class="li" tt:for="{{weekDay}}"></view>
+                <view class="li {{tabIndex == index ? 'active' : ''}}" tt:for="{{orderDate}}" data-idx="{{index}}" data-obj="{{item}}" catchtap="getDate">
+                    <text class="em">{{item.dayStr}}</text>
+                    <text class="i">{{item.day}}</text>
+                    <text class="span has" tt:if="{{item.status == 2}}">{{item.statusStr}}</text>
+                    <text class="span none" tt:if="{{item.status == 1}}">{{item.statusStr}}</text>
+                    <text class="span full" tt:if="{{item.status == 3}}">{{item.statusStr}}</text>
+                    <text class="span ready" tt:if="{{item.status == 4}}">{{item.statusStr}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

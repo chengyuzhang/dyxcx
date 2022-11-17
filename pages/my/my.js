@@ -52,11 +52,11 @@ Page({
 				}
 				return item
 			})
-
 			if(peopleList.length > 5){
+				peopleList = peopleList.slice(0, 5)
 				this.setData({
+					peopleList
 				})
-				this.peopleList = peopleList.slice(0, 5)
 			}else{
 				this.setData({
 					peopleList
