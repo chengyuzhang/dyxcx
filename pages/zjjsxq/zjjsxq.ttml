@@ -20,7 +20,7 @@
 			<view class="ul">
 				<view class="li" tt:for="{{ksList}}">
 					<text class="span">{{item.officeName}}</text>
-					<image src="../../assets/imgs/qgh-bg.png" data-clinicdate="{{item.clinicDate}}" bindtap="toPage"></image>
+					<image src="../../assets/imgs/qgh-bg.png" data-clinicdate="{{item.clinicDate}}" data-officeId="{{item.officeId}}" bindtap="toPage"></image>
 				</view>
 			</view>
 		</view>
