@@ -1,5 +1,5 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/jzjl/jzjl.js
-import { appointAbout, patientAbout } from '../../request/api.js'
+import { jzjlAbout, patientAbout } from '../../request/api.js'
 
 Page({
   data: {
@@ -15,7 +15,8 @@ Page({
   },
   onLoad: async function (options) {
     await this.getLastAppointPatient()
-    this.getPatientList()
+    this.getPatientList()		
+    this.getJzjlList()
   },
   showListFn(){
     this.setData({
@@ -30,12 +31,22 @@ Page({
       showList: false,
       jzrInfo: this.data.jzrList[idx],
       jzrInfo: null,
-      appointList: [],
-      finished: false,
-      loading: false,
-      pageNo: 1
+      items: []
     })
-    this.getAppointList()
+    this.getJzjlList()
+  },
+  getJzjlList(){
+    jzjlAbout.getJzjlList({
+      patientId: this.data.jzrInfo.id
+      // patientId: 33
+    }).then(res => {
+      console.log('getJzjlList-res', res)
+      this.setData({
+        items: res.data
+      })
+    }).catch(err => {
+      console.log('getJzjlList-err'. err)
+    })
   },
   getPatientList(){
     patientAbout.getPatientList({
@@ -71,6 +82,11 @@ Page({
   toPage(){
     tt.navigateTo({
       url: '/pages/jzjlxq/jzjlxq'
+    })
+  },
+  toXzhyPage(){
+    tt.redirectTo({
+      url: '/pages/index/index'
     })
   }
 })

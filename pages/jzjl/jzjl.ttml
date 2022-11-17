@@ -26,13 +26,13 @@
 	<view class="ul">
 		<view class="li" tt:for="{{items}}" data-idx="{{index}}" bindtap="toPage">
 			<view class="l">
-				<view class="h6">张英超</view>
+				<view class="h6">{{item.ysmc}}</view>
 				<view class="p">
-					<text class="i">门诊</text>
-					<text class="span">2022-05-07</text>
+					<text class="i">{{item.ksmc}}</text>
+					<text class="span">{{item.jzrq}}</text>
 				</view>
 			</view>
-			<text class="p">咳嗽、呼吸道感染</text>
+			<text class="p">{{item.jbmc}}</text>
 		</view>
 	</view>
 	<view class="con" tt:if="{{!items.length}}">

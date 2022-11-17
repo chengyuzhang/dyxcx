@@ -113,6 +113,17 @@ export const doctotAbout = {
 
 }
 
+//就诊记录相关
+export const jzjlAbout = {
+	async getJzjlList (data, headers) {
+		return await get(baseURL + `/mz/mzxxList`, data, headers)
+	},
+	async getJzjlDetail (data, headers) {
+		return await get(baseURL + `/mz/mzmxList`, data, headers)
+	},
+
+}
+
 export const tool = {
 	async smsCode (data, headers) {
 		return await get(baseURL + `/tool/smsCode`, data, headers)
