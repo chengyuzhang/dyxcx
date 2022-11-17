@@ -1,20 +1,20 @@
 <view class="jcjg-container">
 	<view class="top">
-		<view class="p" bindtap="showListFn">
+		<view class="p" bindtap="showListFn" tt:if="{{jzrInfo}}">
 			<text class="i">就诊人</text>
-			<text class="span">就诊人</text>
-			<image src="/assets/imgs/arrow-down.png"></image>
+			<text class="span">{{jzrInfo.name}}</text>
+			<image src="../../assets/imgs/arrow-down.png"></image>
 		</view>
 		<view class="ul" tt:if="{{showList}}">
-			<view class="li" tt:for="{{4}}" data-idx="{{index}}" bindtap="getItem">
+			<view class="li" tt:for="{{jzrList}}" data-idx="{{index}}" bindtap="getItem">
 				<view class="l">
-					<text class="span">星星</text>
+					<text class="span">{{item.name}}</text>
 					<view class="div">
-						<text class="h6">1578 944 9888</text>
+						<view class="h6">{{item.feeNo}} </view>
 						<view class="p">
 							<text class="i">北京社保卡</text>
-							<text class="span ybbx">医保报销</text>
-							<text class="span zf">自费</text>
+							<text tt:if="{{item.feeType == 2}}" class="span ybbx">医保报销</text>
+							<text tt:if="{{item.feeType == 1}}" class="span zf">自费</text>
 						</view>
 					</view>
 				</view>

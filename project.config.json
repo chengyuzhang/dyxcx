@@ -11,7 +11,7 @@
   "projectname": "dcfy",
   "condition": {
     "miniprogram": {
-      "current": -1,
+      "current": 1668674373616,
       "list": [
         {
           "id": 1659511353198,
@@ -167,7 +167,7 @@
           "location": "qr_code"
         },
         {
-          "id": 1659749653695,
+          "id": 1668674373616,
           "name": "就诊记录",
           "pathName": "pages/jzjl/jzjl",
           "query": "",
