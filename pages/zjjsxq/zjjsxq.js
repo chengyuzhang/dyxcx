@@ -59,8 +59,6 @@ Page({
   toPage(ev){
     let clinicDate = ev.currentTarget.dataset.clinicdate
     let officeId = ev.currentTarget.dataset.officeid
-    console.log('clinicDate', clinicDate)
-    console.log('officeId', officeId)
     tt.redirectTo({
       url: `/pages/xzhy-zj/xzhy-zj?id=${officeId}&clinicDate=${clinicDate}`
     });
