@@ -77,14 +77,14 @@
         <view class="morning div">
             <view class="h5">上午号源</view>
             <view class="ul">
-                <view class="li" tt:for="{{3}}">
+                <view class="li" tt:for="{{swList}}">
                     <view class="l">
-                        <view class="h6">儿科专家（正高）</view>
-                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                        <view class="h6">{{item.name}}</view>
+                        <view class="p" tt:if="{{item.skill}}">{{item.skill}}</view>
                     </view>
                     <view class="r">
-                        <view class="p">￥50</view>
-                        <button bindtap="timeShowFn">剩余20</button>
+                        <view class="p">￥{{item.prePrice}}</view>
+                        <button class="full">约满</button>
                     </view>
                 </view>
             </view>
@@ -92,14 +92,14 @@
         <view class="afternoon div">
             <view class="h5">下午号源</view>
             <view class="ul">
-                <view class="li" tt:for="{{3}}">
+                <view class="li" tt:for="{{xwList}}">
                     <view class="l">
-                        <view class="h6">儿科专家（正高）</view>
-                        <view class="p">擅长：暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息暂无信息</view>
+                        <view class="h6">{{item.name}}</view>
+                        <view class="p" tt:if="{{item.skill}}">{{item.skill}}</view>
                     </view>
                     <view class="r">
-                        <view class="p">￥50</view>
-                        <button bindtap="timeShowFn">剩余20</button>
+                        <view class="p">￥{{item.prePrice}}</view>
+                        <button class="full">约满</button>
                     </view>
                 </view>
             </view>

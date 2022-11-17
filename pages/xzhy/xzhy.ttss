@@ -161,8 +161,8 @@
     border-top: 1rpx solid #F8F8F8;
 }
 .xzhy-container .tab-con .div .ul .li .l{
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 .xzhy-container .tab-con .div .ul .li .l .h6{
     font-size: 28rpx;

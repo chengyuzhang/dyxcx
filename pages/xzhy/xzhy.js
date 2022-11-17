@@ -38,6 +38,13 @@ Page({
 
     await this.getDutyDate()
     this.formatOrderDate()
+
+    this.setData({
+      clinicDate: this.data.dateList[0].date,
+      tabStatus: this.data.dateList[0].status
+    })
+
+		this.officeDutyDay()
   },
   formatOrderDate(){
     let orderDate = this.data.dateList.map((item, index) => {
