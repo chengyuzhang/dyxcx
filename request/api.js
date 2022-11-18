@@ -2,8 +2,9 @@ import { api } from './request.js'
 // import config from '../../../config/env.js'
 let {get, post} = api
 
-let baseURL = 'http://hzx.ngrok.aojiedu.com'
-let baseURL1 = 'https://xiaoxapi.aoji.cn'
+export const baseURL = 'http://hzxdev.ngrok.aojiedu.com'
+// export const baseURL = 'http://hzx.ngrok.aojiedu.com'
+export const baseURL1 = 'https://xiaoxapi.aoji.cn'
 
 export const index = {
 	async getAds (data, headers) {
@@ -130,8 +131,8 @@ export const tool = {
 	},
 }
 export const login = {
-	async getCode (data, headers) {
-		return await get(baseURL + `/wxlogin/login`, data, headers)
+	async getToken (data, headers) {
+		return await post(baseURL + `/dylogin/login`, data, headers)
 	},
 	async getUserInfos (data, headers) {
 		return await get(baseURL + `/user/detail`, data, headers)

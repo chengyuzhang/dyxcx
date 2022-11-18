@@ -233,7 +233,7 @@ Page({
       })
       return
     }
-    if(!this.data.ybkhVal){
+    if(!this.data.ybkhVal && this.data.typeIndex == 2){
       tt.showToast({
         title: "请输入医保卡号！",
         icon: 'none',

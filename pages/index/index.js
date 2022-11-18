@@ -1,7 +1,7 @@
 const app = getApp()
-import { index, newsAbout, areaAbout, noticeAbout } from '../../request/api.js'
+import { index, newsAbout, areaAbout, noticeAbout, login } from '../../request/api.js'
 // import { api } from '../../request/request.js'
-
+console.log('app', app)
 Page({
   data: {
     showSelectZone: false,
@@ -36,14 +36,63 @@ Page({
     yydtList: [],
     yyxxList: [],
     ghxzDeatil: '',
-    showGhxz: false
+    showGhxz: false,
+    isShowOpacity: true
   },
   onLoad: async function () {
+    console.log('isShowOpacity',  this.data.isShowOpacity)
+    // await this.getToken()
+    // this.getAds()
+    // this.getYydtInfoList()
+    // this.getYyxxInfoList()
+    // this.getAreaList()
+    // this.getGhxzDetails()
+  },
+  async onShow(){
+    await this.getToken()
     this.getAds()
     this.getYydtInfoList()
     this.getYyxxInfoList()
     this.getAreaList()
     this.getGhxzDetails()
+  },
+  getAuthSetting(){
+    app.getAuthSetting()
+  },
+  async getToken(){
+    let _this = this
+    let token = tt.getStorageSync('token')
+
+    if(token) {
+      _this.setData({
+        isShowOpacity: false
+      })
+      return
+    }
+    let getCodeAndUserInfo = await app.getCodeAndUserInfo()
+    console.log('getCodeAndUserInfo', getCodeAndUserInfo)
+
+    return login.getToken({
+      anonymousCode: getCodeAndUserInfo[0].anonymousCode,
+      avatarUrl: getCodeAndUserInfo[1].userInfo.avatarUrl,
+      city: getCodeAndUserInfo[1].userInfo.city,
+      code: getCodeAndUserInfo[0].code,
+      country: getCodeAndUserInfo[1].userInfo.country,
+      gender: getCodeAndUserInfo[1].userInfo.gender,
+      language: getCodeAndUserInfo[1].userInfo.language,
+      nickName: getCodeAndUserInfo[1].userInfo.nickName,
+      province: getCodeAndUserInfo[1].userInfo.province
+    }).then(res => {
+      console.log('getToken', res)
+      if(res.data){
+          tt.setStorageSync('token', res.data)
+          _this.setData({
+            isShowOpacity: false
+          })
+      }
+    }).catch(err => {
+        console.log('getToken', err)
+    })
   },
   agreeGhxz(){
     this.setData({

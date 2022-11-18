@@ -2,7 +2,6 @@ let requestCount = 0
 
 export const api = {
     async get(url, data = {}, header = {}){
-        
         let token = tt.getStorageSync('token')
         header = Object.assign({token}, header)
 		header = Object.assign({hospitalId: 1}, header)
@@ -11,7 +10,7 @@ export const api = {
         tt.showLoading({
             title: '请求中'
         })
-        
+
         return new Promise((resolve, reject) => {
             tt.request({
                 url, 

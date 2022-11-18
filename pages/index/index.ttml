@@ -91,4 +91,5 @@
         </view>
     </view>
     <nav-bar idx=0></nav-bar>
+    <view class="opacity" bindtap="getAuthSetting" tt:if="{{isShowOpacity}}"></view>
 </view>
