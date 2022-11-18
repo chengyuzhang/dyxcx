@@ -291,7 +291,7 @@ Page({
     }).then(res => {
       console.log('addPatient-res', res)
       tt.showToast({
-        title: "添加就诊人成功",
+        title: res.message,
         icon: 'none',
         duration: 1500,
         success(res) {

@@ -59,9 +59,10 @@ export const api = {
                     if (!requestCount) {
                         wx.hideLoading()
                     }
-                    if(res.data.code == 200){
-                        resolve(res.data)
-                    }
+                    resolve(res.data)
+
+                    // if(res.data.code == 200){
+                    // }
                 },
                 fail(err){
                     console.log('errrr', err)

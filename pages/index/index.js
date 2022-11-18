@@ -70,7 +70,6 @@ Page({
       return
     }
     let getCodeAndUserInfo = await app.getCodeAndUserInfo()
-    console.log('getCodeAndUserInfo', getCodeAndUserInfo)
 
     return login.getToken({
       anonymousCode: getCodeAndUserInfo[0].anonymousCode,
@@ -83,7 +82,6 @@ Page({
       nickName: getCodeAndUserInfo[1].userInfo.nickName,
       province: getCodeAndUserInfo[1].userInfo.province
     }).then(res => {
-      console.log('getToken', res)
       if(res.data){
           tt.setStorageSync('token', res.data)
           _this.setData({
