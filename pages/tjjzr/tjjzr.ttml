@@ -16,7 +16,7 @@
         <view class="li">
             <text class="span">姓名</text>
             <view class="r">
-                <input value="{{xmVal}}" bindinput="getXm" :disabled="{{hasXm}}" placeholder="请输入就诊人真实姓名" />
+                <input value="{{xmVal}}" bindinput="getXm" disabled="{{hasXm}}" placeholder="请输入就诊人真实姓名" />
             </view>
         </view>
         <view class="li">
@@ -97,14 +97,15 @@
         <view class="li">
             <text class="span">医保卡号</text>
             <view class="r">
-                <input value="{{ybkhVal}}" :disabled="{{hasYbkh}}" bindinput="getYbkh" placeholder="请输入医保卡号" />
+                <input value="{{ybkhVal}}" disabled="{{hasYbkh}}" bindinput="getYbkh" placeholder="请输入医保卡号" />
                 <image src="../../assets/imgs/scan.png"></image>
             </view>
         </view>
         <view class="li">
             <text class="span">手机号</text>
             <view class="r">
-                <input value="{{sjhVal}}" :disabled="{{hasPhone}}" bindinput="getSjh" placeholder="请输入就诊人手机号码" />
+                <input tt:if="{{phoneHide}}" value="{{phoneHide}}" disabled="{{hasPhone}}" bindinput="getSjh" placeholder="请输入就诊人手机号码" />
+                <input tt:else value="{{sjhVal}}" disabled="{{hasPhone}}" bindinput="getSjh" placeholder="请输入就诊人手机号码" />
             </view>
         </view>
         <view class="li code">

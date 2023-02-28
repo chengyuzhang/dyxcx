@@ -117,6 +117,7 @@ Page({
     numStr: 60,
     iBtn: true,
     hasZjhm: false,
+    phoneHide: ''
   },
   onLoad: function (options) {
 
@@ -159,6 +160,7 @@ Page({
           mzVal: res.data.nationality,
           sjhVal: res.data.phone,
           sexIndex: res.data.sex,
+          phoneHide: res.data.phoneHide
         })
 
         if(this.data.xmVal){
@@ -207,7 +209,7 @@ Page({
           })
         }
 
-        this.cardTypeList.forEach((item, index) => {
+        this.data.cardTypeList.forEach((item, index) => {
           if(item.id == this.data.zjlxId){
             this.setData({
               zjlxVal: item.name
@@ -392,7 +394,7 @@ Page({
       phone: this.data.sjhVal,
       relation: this.data.gxId,
       sex: this.data.sexIndex,
-      validCode: this.data.yzmVal,
+      smsCode: this.data.yzmVal,
     }).then(res => {
       console.log('addPatient-res', res)
       tt.showToast({
@@ -401,6 +403,7 @@ Page({
         duration: 1500,
         success(res) {
           console.log(res)
+          tt.navigateBack({})
         },
         fail(res) {
           console.log("showToast 调用失败", res);

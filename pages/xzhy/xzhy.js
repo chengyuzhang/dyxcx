@@ -144,7 +144,8 @@ Page({
     }).then(res => {
       console.log('getOfficeDutyTimes-res', res)
       this.setData({
-        timeList: res.data
+        timeList: res.data,
+        timeId: res.data[0].id
       })
     }).catch(err => {
       console.log('getOfficeDutyTimes-err', err)

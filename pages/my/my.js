@@ -10,6 +10,10 @@ Page({
 		]
   	},
 	onLoad: function (options) {
+		// this.getUserInfos()
+		// this.getPatientList()
+	},
+	onShow(){
 		this.getUserInfos()
 		this.getPatientList()
 	},

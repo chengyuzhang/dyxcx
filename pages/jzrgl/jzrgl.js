@@ -7,11 +7,11 @@ Page({
     jzrList: []
   },
   onLoad: function (options) {
-    this.getPatientList()
-
-    
-    
+    // this.getPatientList()
   },
+	onShow(){
+		this.getPatientList()
+	},
   getPatientList(){
     patientAbout.getPatientList({
     }).then(res => {
