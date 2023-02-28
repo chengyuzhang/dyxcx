@@ -1,5 +1,5 @@
 <view class="tjjzr-container">
-    <view class="ul">
+    <view class="ul" tt:if="{{showList}}">
         <view class="li gx">
             <picker
                 bindchange="pickerRelation"
@@ -16,7 +16,7 @@
         <view class="li">
             <text class="span">姓名</text>
             <view class="r">
-                <input value="{{xmVal}}" bindinput="getXm" placeholder="请输入就诊人真实姓名" />
+                <input value="{{xmVal}}" bindinput="getXm" :disabled="{{hasXm}}" placeholder="请输入就诊人真实姓名" />
             </view>
         </view>
         <view class="li">
@@ -35,7 +35,7 @@
         <view class="li">
             <text class="span">证件号码</text>
             <view class="r">
-                <input value="{{zjhmVal}}" bindinput="getZjhm" placeholder="请输入证件号码" />
+                <input value="{{zjhmVal}}" disabled="{{hasZjhm}}" bindinput="getZjhm" placeholder="请输入证件号码" />
             </view>
         </view>
         <view class="li">
@@ -68,7 +68,7 @@
         <view class="li">
             <picker
                 mode="date"
-                header-text="选择生日"
+                header-text="请选择就诊人生日"
                 bindchange="datePickerChange"
                 value="{{ srVal }}"
                 start="1980-09-01"
@@ -97,14 +97,14 @@
         <view class="li">
             <text class="span">医保卡号</text>
             <view class="r">
-                <input value="{{ybkhVal}}" bindinput="getYbkh" placeholder="请输入医保卡号" />
+                <input value="{{ybkhVal}}" :disabled="{{hasYbkh}}" bindinput="getYbkh" placeholder="请输入医保卡号" />
                 <image src="../../assets/imgs/scan.png"></image>
             </view>
         </view>
         <view class="li">
             <text class="span">手机号</text>
             <view class="r">
-                <input value="{{sjhVal}}" bindinput="getSjh" placeholder="请输入就诊人手机号码" />
+                <input value="{{sjhVal}}" :disabled="{{hasPhone}}" bindinput="getSjh" placeholder="请输入就诊人手机号码" />
             </view>
         </view>
         <view class="li code">
@@ -116,7 +116,18 @@
             </view>
         </view>
     </view>
-    <view class="btn">
+    <view class="btn" tt:if="{{showList}}">
         <button bindtap="addPatient">提交就诊人信息</button>
+    </view>
+    <view class="ul" tt:if="{{!showList}}">
+        <view class="li">
+            <text class="span">身份证号码</text>
+            <view class="r">
+                <input value="{{zjhmVal}}" bindinput="getZjhm" placeholder="请输入身份证号码"></input>
+            </view>
+        </view>
+    </view>
+    <view class="btn" tt:if="{{!showList}}">
+        <button bindtap="getPatientInfo" >查询就诊人信息</button>
     </view>
 </view>

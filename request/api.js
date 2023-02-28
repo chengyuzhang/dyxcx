@@ -2,8 +2,8 @@ import { api } from './request.js'
 // import config from '../../../config/env.js'
 let {get, post} = api
 
-export const baseURL = 'http://hzxdev.ngrok.aojiedu.com'
-// export const baseURL = 'http://hzx.ngrok.aojiedu.com'
+// export const baseURL = 'http://hzxdev.ngrok.aojiedu.com'
+export const baseURL = 'http://hzx.ngrok.aojiedu.com'
 export const baseURL1 = 'https://xiaoxapi.aoji.cn'
 
 export const index = {
@@ -56,7 +56,10 @@ export const patientAbout = {
 	},
 	async getLastAppointPatient (data, headers) {
 		return await get(baseURL + `/patient/lastAppointPatient`, data, headers)
-	}
+	},
+	async getPatientInfo (data, headers) {
+		return await get(baseURL + `/patient/queryPatient`, data, headers)
+	},
 }
 
 export const noticeAbout = {

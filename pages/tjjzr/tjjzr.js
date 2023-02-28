@@ -4,6 +4,7 @@ const util= require('../../util/util.js')
 
 Page({
   data: {
+    showList: false,
     showCardType: false,
     cardTypeList: [{
       name: '身份证',
@@ -115,11 +116,115 @@ Page({
     srFormat: '',
     numStr: 60,
     iBtn: true,
+    hasZjhm: false,
   },
   onLoad: function (options) {
 
   },
-  
+
+  getPatientInfo(){
+    if(!this.data.zjhmVal){
+      tt.showToast({
+        title: "请输入证件号码！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+
+    patientAbout.getPatientInfo({
+      idNo: this.data.zjhmVal
+    }).then(res => {
+
+      this.setData({
+        showList: true
+      })
+      console.log('getPatientInfo-res', res)
+
+      if(res.data){
+        this.setData({
+          srFormat: res.data.birthday || util.getBirthdayFromIdCard(this.data.zjhmVal),
+          srVal: res.data.birthday || util.getBirthdayFromIdCard(this.data.zjhmVal),
+          ybkhVal: res.data.feeNo,
+          typeIndex: res.data.feeType,
+          zjhmVal: res.data.idNo,
+          zjlxId: res.data.idType,
+          xmVal: res.data.name,
+          mzVal: res.data.nationality,
+          sjhVal: res.data.phone,
+          sexIndex: res.data.sex,
+        })
+
+        if(this.data.xmVal){
+          this.setData({
+            hasXm: true
+          })
+        }
+        if(this.data.zjlxId){
+          this.setData({
+            hasZjlx: true
+          })
+        }
+        if(this.data.zjhmVal){
+          this.setData({
+            hasZjhm: true
+          })
+        }
+        if(this.data.sexIndex){
+          this.setData({
+            hasSex: true
+          })
+        }
+        if(this.data.mzVal){
+          this.setData({
+            hasMz: true
+          })
+        }
+        if(this.data.srVal){
+          this.setData({
+            hasSr: true
+          })
+        }
+        if(this.data.typeIndex){
+          this.setData({
+            hasFb: true
+          })
+        }
+        if(this.data.ybkhVal){
+          this.setData({
+            hasYbkh: true
+          })
+        }
+        if(this.data.sjhVal){
+          this.setData({
+            hasPhone: true
+          })
+        }
+
+        this.cardTypeList.forEach((item, index) => {
+          if(item.id == this.data.zjlxId){
+            this.setData({
+              zjlxVal: item.name
+            })
+          }
+        })
+      }else{
+        this.setData({
+          srFormat: util.getBirthdayFromIdCard(this.data.zjhmVal),
+          srVal: util.getBirthdayFromIdCard(this.data.zjhmVal)
+        })
+      }
+
+    }).catch(err => {
+      console.log('getPatientInfo-err', err)
+    })
+  },
   addPatient(){
     if(!this.data.gxId){
       tt.showToast({
@@ -330,20 +435,20 @@ Page({
     this.setData({
       gxVal: this.data.relationList[idx].name,
       gxId: this.data.relationList[idx].id
-    })  
+    })
   },
   pickerCardType(ev){
     let idx = Number(ev.detail.value)
     this.setData({
       zjlxVal: this.data.cardTypeList[idx].name,
       zjlxId: this.data.cardTypeList[idx].id
-    })  
+    })
   },
   pickerNation(ev){
     let idx = Number(ev.detail.value)
     this.setData({
       mzVal: this.data.nationList[idx]
-    })  
+    })
   },
   datePickerChange(ev){
     console.log(ev.detail.value)
@@ -389,7 +494,7 @@ Page({
     let timer = null
     timer = setInterval(() => {
       num--
-      
+
       this.setData({
           numStr: num
       })
@@ -427,6 +532,11 @@ Page({
   getYzm(e){
     this.setData({
       yzmVal: e.detail.value
+    })
+  },
+  getZjhm(e){
+    this.setData({
+      zjhmVal: e.detail.value
     })
   },
 })

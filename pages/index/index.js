@@ -8,13 +8,7 @@ Page({
     tabIndex: 0,
     items: [
       {
-        title: '核酸检测'
-      },
-      {
         title: '专家介绍'
-      },
-      {
-        title: '体检预约'
       },
       {
         title: '就诊须知'
@@ -207,33 +201,30 @@ Page({
     let idx = ev.currentTarget.dataset.idx
     let path = ''
     switch(idx){
+      // case 0:
+      //   this.setData({
+      //     showGhxz: true,
+      //     showSelectZone: true,
+      //     isHs: true,
+      //   })
+      //   // path = '/pages/xzhy/xzhy'
+      // break;
       case 0:
-        this.setData({
-          showGhxz: true,
-          showSelectZone: true,
-          isHs: true,
-        })
-        // path = '/pages/xzhy/xzhy'
+        path = '/pages/zjjs/zjjs'
       break;
       case 1:
-        path = '/pages/zjjs/zjjs'
-      break;
-      case 2:
-        path = '/pages/zjjs/zjjs'
-      break;
-      case 3:
         path = '/pages/jzxz/jzxz'
       break;
-      case 4:
+      case 2:
         path = '/pages/yfxx/yfxx'
       break;
-      case 5:
+      case 3:
         path = '/pages/yyjj/yyjj'
       break;
-      case 6:
+      case 4:
         path = '/pages/yydt/yydt'
       break;
-      case 7:
+      case 5:
         path = '/pages/yqwz/yqwz'
       break;
     }

@@ -35,6 +35,7 @@ App({
       tt.login({
         force: true,
         success(res) {
+          console.log('res', res)
           resolve(res)
           // resolve('wAOWh2Zr2qXm8a7i')
         },

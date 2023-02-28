@@ -20,7 +20,7 @@ export const api = {
                 success(res){
                     requestCount -- 
                     if (!requestCount) {
-                        wx.hideLoading()
+                        tt.hideLoading()
                     }
 
                     if(res.data.code == 200){
@@ -30,7 +30,7 @@ export const api = {
                 fail(){
                     requestCount -- 
                     if (!requestCount) {
-                        wx.hideLoading()
+                        tt.hideLoading()
                     }
 
                     reject(res)
@@ -57,7 +57,7 @@ export const api = {
                     console.log('resss', res)
                     requestCount -- 
                     if (!requestCount) {
-                        wx.hideLoading()
+                        tt.hideLoading()
                     }
                     resolve(res.data)
 
@@ -69,7 +69,7 @@ export const api = {
 
                     requestCount -- 
                     if (!requestCount) {
-                        wx.hideLoading()
+                        tt.hideLoading()
                     }
 
                     reject(res)

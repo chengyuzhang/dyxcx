@@ -23,14 +23,14 @@
     <view class="ul items">
         <view class="li" tt:for="{{items}}" data-idx="{{index}}" bindtap="toPage">
             <view class="img">
-				<image tt:if="{{index == 0}}" src="../../assets/imgs/hsjc.png"></image>
-				<image tt:if="{{index == 1}}" src="../../assets/imgs/zjjs.png"></image>
-				<image tt:if="{{index == 2}}" src="../../assets/imgs/tjyy.png"></image>
-				<image tt:if="{{index == 3}}" src="../../assets/imgs/jzxz.png"></image>
-				<image tt:if="{{index == 4}}" src="../../assets/imgs/yfxx.png"></image>
-				<image tt:if="{{index == 5}}" src="../../assets/imgs/yyjj.png"></image>
-				<image tt:if="{{index == 6}}" src="../../assets/imgs/yydt.png"></image>
-				<image tt:if="{{index == 7}}" src="../../assets/imgs/yqwz.png"></image>
+				<!-- <image tt:if="{{index == 0}}" src="../../assets/imgs/hsjc.png"></image> -->
+				<image tt:if="{{index == 0}}" src="../../assets/imgs/zjjs.png"></image>
+				<!-- <image tt:if="{{index == 2}}" src="../../assets/imgs/tjyy.png"></image> -->
+				<image tt:if="{{index == 1}}" src="../../assets/imgs/jzxz.png"></image>
+				<image tt:if="{{index == 2}}" src="../../assets/imgs/yfxx.png"></image>
+				<image tt:if="{{index == 3}}" src="../../assets/imgs/yyjj.png"></image>
+				<image tt:if="{{index == 4}}" src="../../assets/imgs/yydt.png"></image>
+				<image tt:if="{{index == 5}}" src="../../assets/imgs/yqwz.png"></image>
             </view>
             <text class="p">{{item.title}}</text>
         </view>
