@@ -80,6 +80,24 @@
             </view>
         </view>
         <view class="li">
+            <picker
+                mode="region"
+                header-text="请选择所在地区"
+                bindchange="pickerZone"
+                ></picker>
+            <text class="span">地区</text>
+            <view class="r">
+                <input value="{{zoneVal}}" disabled placeholder="请选择所在地区" />
+                <image src="../../assets/imgs/r.png"></image>
+            </view>
+        </view>
+        <view class="li" tt:if="{{zoneVal}}">
+            <text class="span">详细地址</text>
+            <view class="r">
+                <input value="{{addressVal}}" disabled="{{hasAddress}}" bindinput="getAddress" placeholder="请输入详细地址" />
+            </view>
+        </view>
+        <view class="li">
             <text class="span">费别</text>
             <view class="ol r">
                 <view class="li" data-type=1 bindtap="changeType">

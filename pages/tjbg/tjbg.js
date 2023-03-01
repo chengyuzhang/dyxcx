@@ -1,5 +1,5 @@
 // /Users/zhangchengyu/Workstation/DcfyMiniApp/dcfy/pages/jcjg/jcjg.js
-import { appointAbout, patientAbout } from '../../request/api.js'
+import { appointAbout, patientAbout, bgAbout } from '../../request/api.js'
 
 Page({
   data: {
@@ -14,6 +14,7 @@ Page({
   onLoad: async function (options) {
     await this.getLastAppointPatient()
     this.getPatientList()
+    this.getTjbgList()
   },
   showListFn(){
     this.setData({
@@ -27,13 +28,10 @@ Page({
       activeIndex: idx,
       showList: false,
       jzrInfo: this.data.jzrList[idx],
-      jzrInfo: null,
-      appointList: [],
-      finished: false,
-      loading: false,
-      pageNo: 1
+      jcbgList: [],
+      jybgList: [],
     })
-    this.getAppointList()
+    this.getTjbgList()
   },
   getPatientList(){
     patientAbout.getPatientList({
@@ -64,6 +62,17 @@ Page({
       }
     }).catch(err => {
       console.log('getLastAppointPatient-err', err)
+    })
+  },
+  getTjbgList(){
+    bgAbout.getTjbgList({
+      patientId: this.data.jzrInfo.id
+      // patientId: 33
+    }).then(res => {
+      console.log('getTjbgList-res', res)
+      // this.bgList = res.data
+    }).catch(err => {
+      console.log('getTjbgList-err'. err)
     })
   },
   toPage(){

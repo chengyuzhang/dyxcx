@@ -104,6 +104,23 @@ export const officeAbout = {
 	},
 }
 
+//检查/检验报告
+export const bgAbout = {
+	async getjybgList (data, headers) {
+		return await get(baseURL + `/jy/jybgList`, data, headers)
+	},
+	async getJybgDetail (data, headers) {
+		return await get(baseURL + `/jy/jymxList`, data, headers)
+	},
+	async getTjbgList (data, headers) {
+		return await get(baseURL + `/tj/tjbgList`, data, headers)
+	},
+	async getTjbgDetail (data, headers) {
+		return await get(baseURL + `/tj/tjjgList`, data, headers)
+	}
+
+}
+
 export const doctotAbout = {
 	async getDoctorList (data, headers) {
 		return await get(baseURL + `/doctor/pageList`, data, headers)

@@ -4,6 +4,10 @@ const util= require('../../util/util.js')
 
 Page({
   data: {
+    showZone: false,
+    zoneVal: '',
+    hasAddress: false,
+    addressVal: '',
     showList: false,
     showCardType: false,
     cardTypeList: [{
@@ -166,6 +170,11 @@ Page({
         if(this.data.xmVal){
           this.setData({
             hasXm: true
+          })
+        }
+        if(this.data.addressVal){
+          this.setData({
+            hasAddress: true
           })
         }
         if(this.data.zjlxId){
@@ -432,6 +441,19 @@ Page({
     }).catch(err => {
       console.log('smsCode-err', err)
     })
+  },
+  pickerZone(ev){
+    this.setData({
+      zoneVal: ev.detail.value.join('')
+    })
+    console.log('zone-val', this.data.zoneVal)
+  },
+  getAddress(e){
+    this.setData({
+      addressVal: e.detail.value
+    })
+
+    console.log('addressVal', this.data.addressVal)
   },
   pickerRelation(ev){
     let idx = Number(ev.detail.value)

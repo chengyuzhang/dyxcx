@@ -18,7 +18,8 @@ Page({
     })
 
     this.appointPreview()
-
+  },
+  onShow(){
     let jzrInfo = tt.getStorageSync('jzrInfo') || null
     this.setData({
       jzrInfo: JSON.parse(jzrInfo)
@@ -42,6 +43,19 @@ Page({
     })
   },
   saveAppoint(){
+    if(!this.data.jzrInfo){
+      tt.showToast({
+        title: '请添加就诊人',
+        icon: 'none',
+        success: (res) => {
+          
+        },
+        fail: (res) => {
+          
+        },
+      })
+      return
+    }
     appointAbout.saveAppoint({
       dutyTimeId: this.data.id,
       patientId: this.data.jzrInfo.id

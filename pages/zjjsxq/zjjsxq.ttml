@@ -16,7 +16,7 @@
             <view class="p">新生儿疾病、小儿呼吸系统疾病、中西医结合</view>
             <view class="h5" style="margin-top:48rpx;">医生介绍</view>
             <view class="p">科室组建于1968年，新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗。科室组建于1968年，新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗。科室组建于1968年，新生儿疾病、小儿呼吸系统疾病、中西医结合、神经系统疾病、脑发育等疾病的诊疗。</view>
-			<view class="h5">出诊科室</view>
+			<view class="h5" tt:if="{{ksList.length}}">出诊科室</view>
 			<view class="ul">
 				<view class="li" tt:for="{{ksList}}">
 					<text class="span">{{item.officeName}}</text>
