@@ -24,16 +24,16 @@
 		</view>
 	</view>
 	<view class="tab">
-		<view class="ul">
-			<view class="li" tt:for="{{list}}" bindtap="toPage">
+		<view class="ul" tt:if="{{bgList.length}}">
+			<view class="li" tt:for="{{bgList}}" bindtap="toPage">
 				<view class="l">
-					<text class="h5">末梢五分类+CRP+SAA</text>
-					<text class="p">2022-05-07 13:23</text>
+					<text class="h5">{{item.tjmc}}</text>
+					<text class="p">{{item.tjrq}}</text>
 				</view>
 				<image src="../../assets/imgs/r.png"></image>
 			</view>
 		</view>
-		<view class="none" tt:if="{{!list.length}}">
+		<view class="none" tt:else>
 			<image src="../../assets/imgs/none.png"></image>
 			<text class="p">暂无检查结果</text>
 		</view>

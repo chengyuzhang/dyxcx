@@ -164,7 +164,9 @@ Page({
           mzVal: res.data.nationality,
           sjhVal: res.data.phone,
           sexIndex: res.data.sex,
-          phoneHide: res.data.phoneHide
+          phoneHide: res.data.phoneHide,
+          addressVal: res.data.address,
+          zoneVal: res.data.region,
         })
 
         if(this.data.xmVal){
@@ -377,6 +379,37 @@ Page({
       })
       return
     }
+
+    if(!this.data.zoneVal){
+      tt.showToast({
+        title: "请选择地区！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+
+    if(!this.data.addressVal){
+      tt.showToast({
+        title: "请输入详细地址！",
+        icon: 'none',
+        duration: 1500,
+        success(res) {
+          console.log(res)
+        },
+        fail(res) {
+          console.log("showToast 调用失败", res);
+        },
+      })
+      return
+    }
+
     if(!this.data.yzmVal){
       tt.showToast({
         title: "请输入验证码！",
@@ -403,6 +436,8 @@ Page({
       phone: this.data.sjhVal,
       relation: this.data.gxId,
       sex: this.data.sexIndex,
+      region: this.data.zoneVal,
+      address: this.data.addressVal,
       smsCode: this.data.yzmVal,
     }).then(res => {
       console.log('addPatient-res', res)

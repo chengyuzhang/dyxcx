@@ -91,7 +91,7 @@
                 <image src="../../assets/imgs/r.png"></image>
             </view>
         </view>
-        <view class="li" tt:if="{{zoneVal}}">
+        <view class="li">
             <text class="span">详细地址</text>
             <view class="r">
                 <input value="{{addressVal}}" disabled="{{hasAddress}}" bindinput="getAddress" placeholder="请输入详细地址" />

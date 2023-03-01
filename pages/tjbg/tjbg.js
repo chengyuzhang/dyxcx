@@ -71,6 +71,9 @@ Page({
     }).then(res => {
       console.log('getTjbgList-res', res)
       // this.bgList = res.data
+      this.setData({
+        bgList: res.data
+      })
     }).catch(err => {
       console.log('getTjbgList-err'. err)
     })
